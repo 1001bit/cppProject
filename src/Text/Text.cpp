@@ -2,14 +2,15 @@
 
 #include <fstream>
 #include <iostream>
+#include <string>
 
 void Text::countChars(ifstream& inFile) {
     while(inFile.eof() != true){
         string s;
         getline(inFile, s);
 
-        for(int i=0; i<size(s); i++){
-            this->charCount[s[i]]++;
+        for(int i = 0; i < s.size(); i++){
+            this->charCount[to_string(s[i])]++;
         }
     }
 }

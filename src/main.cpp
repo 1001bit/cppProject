@@ -119,8 +119,6 @@ int main()
     string file_input_path,file_output_path,s;
     int mode_switch=1;
 
-
-
     ifstream inFile("assets/inputFile.txt");
 
 

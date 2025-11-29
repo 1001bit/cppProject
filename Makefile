@@ -1,6 +1,6 @@
 FLAGS := -Wall -Wextra -std=c++20 -ggdb
 INCLUDE		:= -Iinclude
-SOURCE		:= src/*.cpp
+SOURCE		:= src/*.cpp src/**/*
 EXECUTABLE	:= bin/main
 
 all: 

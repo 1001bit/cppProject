@@ -1,26 +1,31 @@
 #include "Text.hpp"
 #include <vector>
+#include <iostream>
 
-const vector<string> neededChars {
-    "а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к",
-    "л", "м", "н", "о", "п", "р", "с", "т", "у", "ф", "х", "ц",
-    "ч", "ш", "щ", "ъ", "ы", "э", "ю", "я",
+const vector<char32_t> neededChars {
+    U'а', U'б', U'в', U'г', U'д', U'е', U'ё', U'ж', U'з', U'и', U'й', U'к',
+    U'л', U'м', U'н', U'о', U'п', U'р', U'с', U'т', U'у', U'ф', U'х', U'ц',
+    U'ч', U'ш', U'щ', U'ъ', U'ы', U'э', U'ю', U'я',
 
-    " ", ",", ".", "!", "?", ";", ":"
+    ' ', ',', '.', '!', '?', ';', ':'
 };
 
-unordered_map<string, double> Text::getCharPercentage(){
+unordered_map<char32_t, double> Text::getCharPercentage(){
     double totalCnt = 0;
 
-    unordered_map<string, double> res;
+    unordered_map<char32_t, double> res;
 
-    for(string c : neededChars){
-        totalCnt += this->charCount.count(c);
+    for(char32_t c : neededChars){
+        totalCnt += this->charCount[c];
         res[c] = 0;
     }
 
-    for(string c : neededChars){
-        res[c] = this->charCount.count(c)/totalCnt*100.0;
+    if(totalCnt == 0){
+        return res;
+    }
+
+    for(char32_t c : neededChars){
+        res[c] = this->charCount[c]/totalCnt*100.0;
     }
 
     return res;

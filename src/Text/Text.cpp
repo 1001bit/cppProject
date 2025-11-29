@@ -1,16 +1,19 @@
 #include "Text.hpp"
 
+#include <codecvt>
 #include <fstream>
 #include <iostream>
+#include <locale>
 #include <string>
 
 void Text::countChars(ifstream& inFile) {
-    while(inFile.eof() != true){
-        string s;
-        getline(inFile, s);
+    wstring_convert<codecvt_utf8<char32_t>, char32_t> conv;
+    string line;
 
-        for(int i = 0; i < s.size(); i++){
-            this->charCount[to_string(s[i])]++;
+    while(getline(inFile, line)){
+        u32string converted = conv.from_bytes(line);
+        for(char32_t c : converted){
+            this->charCount[tolower(c)]++;
         }
     }
 }

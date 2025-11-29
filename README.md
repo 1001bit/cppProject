@@ -6,8 +6,8 @@
 * include - для хедеров
 
 ### Сборка и запусе
-* Для windows: ```make win```
+* Для windows: ```mingw32-make```
 * Для Linux: ```make ```
 
 ### Запуск
-* ```./bin/main(.exe)```
+* ```./bin/main```

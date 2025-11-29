@@ -1,8 +1,7 @@
 FLAGS := -Wall -Wextra -std=c++20 -ggdb
- 
-EXECUTABLE	:= main
 INCLUDE		:= -Iinclude
 SOURCE		:= src/*.cpp
+EXECUTABLE	:= bin/main
 
 all: 
-	g++ $(FLAGS) $(INCLUDE) $(SOURCE) -o bin/$(EXECUTABLE) $(LIBRARIES)
+	g++ $(FLAGS) $(INCLUDE) $(SOURCE) -o $(EXECUTABLE)

@@ -27,7 +27,6 @@ Error list:
 */
 #include <iostream> //console i/o
 #include <fstream>     //file i/o
-#include <windows.h>    //possibly usage of windows, changing of char dictionaries
 
 #include <string>
 #include <vector>   //datatypes
@@ -114,10 +113,6 @@ for (int i=150; i<256; i++){
 
 int main()
 {
-
-    SetConsoleOutputCP(1251);//table changes
-    SetConsoleCP(1251);
-
     vector<vector<int>>A(2,vector<int>(256,0));//variable declaration //char table
     vector<vector<string>>Word_list();  //self-explanatory
     vector<pair<int,string>>N=prep(); //preposition table
@@ -126,7 +121,7 @@ int main()
 
 
 
-    ifstream inFile("InputFile.txt");
+    ifstream inFile("assets/inputFile.txt");
 
 
 
@@ -156,7 +151,7 @@ int main()
 switch(mode_switch){
 case 0:{
 
-    ofstream outFile("OutputFile.txt");
+    ofstream outFile("results/outputFile.txt");
     if (outFile.is_open()){
     cout<<"check"<<endl;
     return 0;

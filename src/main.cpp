@@ -106,7 +106,7 @@ while(word_end!=-1)
 
 
 void char_output(vector<vector<int>>A){
-for (int i=150; i<256; i++){
+for (int i=0; i<256; i++){
     cout<<char(i)<<" "<<A[1][i]<<endl;
 }
 }
@@ -138,7 +138,7 @@ int main()
         }
             inFile.close();
     } else {    //if path entered is incorrect
-        cout<<"Error: Could not open file at "<< file_input_path<<endl;
+        cout<<"Error: Could not open file"<<endl;
         return 1;
     }
 
@@ -153,7 +153,9 @@ case 0:{
 
     ofstream outFile("results/outputFile.txt");
     if (outFile.is_open()){
-    cout<<"check"<<endl;
+    for (int i=0; i<256; i++){
+    outFile<<char(i)<<" "<<A[1][i]<<endl;
+    }
     return 0;
     }
     else{

@@ -1,24 +1,25 @@
-#include <fstream>
 #include <unordered_map>
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class Text
 {
 private:
-    unordered_map<char32_t, int> charCount;
-    // TODO:
-    // unordered_map<int, int> wordLenCount;
-    // unordered_map<int, int> sentenceLenCount;
+    unordered_map<int, int> charCount;
+    unordered_map<int, int> wordLenCount;
+    unordered_map<int, int> sentenceLenCount;
 
-    void countChars(ifstream& inFile);
+    void countChars(vector<string>);
+    void word(string);
 
 public:
     Text(string txtPath);
-
-    unordered_map<char32_t, double> getCharPercentage();
-    // TODO:
-    // unordered_map<int, int> getWordLenPercentage();
-    // unordered_map<int, int> getSentenceLenPercentage();
+    vector<string>stringHandler();
+    vector<string>wordHandler();
+    unordered_map<int, int> getCharPercentage();
+    unordered_map<int, int> getWordLenPercentage();
+    unordered_map<int, int> getSentenceLenPercentage();
 };
+

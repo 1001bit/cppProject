@@ -24,7 +24,7 @@ std::unordered_map<char32_t, int> getCharCount(std::ifstream& inFile){
     while(getline(inFile, line)){
         std::u32string converted = conv.from_bytes(line);
         for(char32_t c : converted){
-            charCount[tolower(c)]++;
+            charCount[std::towlower(c)]++;
         }
     }
 

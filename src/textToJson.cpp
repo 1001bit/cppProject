@@ -11,7 +11,7 @@ std::unordered_map<std::string, std::unordered_map<std::string, double>> textCha
         
         for(auto& it1 : stats){
             const std::string c = conv.to_bytes(it1.first);
-            const int percent = it1.second;
+            const double percent = it1.second;
             newStats[c] = percent;
         }
 

@@ -3,11 +3,24 @@
 #include "textToJson.hpp"
 
 #include <fstream>
+#include <filesystem>
+#include <iostream>
+#include <locale>
+
+namespace fs = std::filesystem;
 
 int main(){
-    Text* test = new Text("input/1.txt");
-    json testJson = *test;
+    std::setlocale(LC_ALL, "");
+    std::locale::global(std::locale(""));
 
-    std::ofstream outFile("output/1.json");
-    outFile << testJson.dump(2);
+    for(const auto& entry : fs::directory_iterator("input")){
+        Text text(entry.path());
+        json textJson = text;
+        
+        fs::path outPath = fs::path("output") / entry.path().filename();
+        outPath.replace_extension(".json");
+
+        std::ofstream outFile(outPath);
+        outFile << textJson.dump(2);
+    }
 }

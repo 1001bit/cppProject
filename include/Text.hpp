@@ -1,23 +1,23 @@
+#pragma once
+
 #include <fstream>
 #include <unordered_map>
 #include <string>
 
-using namespace std;
-
 class Text
 {
 private:
-    unordered_map<char32_t, int> charCount;
+    std::unordered_map<char32_t, int> charCount;
     // TODO:
     // unordered_map<int, int> wordLenCount;
     // unordered_map<int, int> sentenceLenCount;
 
-    void countChars(ifstream& inFile);
+    void countChars(std::ifstream& inFile);
 
 public:
-    Text(string txtPath);
+    Text(std::string txtPath);
 
-    unordered_map<char32_t, double> getCharPercentage();
+    std::unordered_map<char32_t, double> getCharPercentage();
     // TODO:
     // unordered_map<int, int> getWordLenPercentage();
     // unordered_map<int, int> getSentenceLenPercentage();

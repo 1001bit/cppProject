@@ -7,18 +7,12 @@
 class Text
 {
 private:
-    std::unordered_map<char32_t, int> charCount;
-    // TODO:
-    // unordered_map<int, int> wordLenCount;
-    // unordered_map<int, int> sentenceLenCount;
-
-    void countChars(std::ifstream& inFile);
+    // 1
+    std::unordered_map<std::string, std::unordered_map<char32_t, double>> charStats;
+    void initCharStats(std::ifstream& inFile);
 
 public:
     Text(std::string txtPath);
 
-    std::unordered_map<char32_t, double> getCharPercentage();
-    // TODO:
-    // unordered_map<int, int> getWordLenPercentage();
-    // unordered_map<int, int> getSentenceLenPercentage();
+    const std::unordered_map<std::string, std::unordered_map<char32_t, double>>& getCharStats() const { return this->charStats; }
 };

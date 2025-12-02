@@ -4,6 +4,8 @@
 #include <fstream>
 #include <locale>
 
+
+
 using namespace std;
 
 string toUtf8(char32_t ch) {
@@ -23,9 +25,25 @@ void charsPercentToFile(string path, const unordered_map<char32_t, double>& cnt)
     } 
 }
 
+
+void wordPercentToFile(string path, const unordered_map<int, double>& cnt){
+    ofstream outFile(path);
+
+    if(!outFile.is_open()){
+        throw runtime_error("Could not open file: " + path);
+    }
+
+    for(const auto& it : cnt){
+        outFile << it.first << " : " << it.second << "%\n";
+    } 
+}
+
 int main(){
+    setlocale(' ',0);
     Text* test = new Text("input/1.txt");
 
     unordered_map<char32_t, double> cnt = test->getCharPercentage();
+    unordered_map<int,double>count= test->getWordLenPercentage();
     charsPercentToFile("output/1.txt", cnt);
+    wordPercentToFile("output/2.txt", count);
 }

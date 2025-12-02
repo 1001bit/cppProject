@@ -17,19 +17,17 @@ class Text
 {
 private:
     // 1
-    std::map<std::string, std::map<char32_t, double>> charStats;
+    std::map<char32_t, double> charStats;
     void initCharStats(std::ifstream& inFile);
 
     // 5
-    std::map<char32_t, AltStats> conAltStats;
-    std::map<char32_t, AltStats> vowAltStats;
+    std::map<char32_t, AltStats> altStats;
     void initAltStats(std::ifstream& inFile); 
 
 public:
     Text(std::string txtPath);
 
-    const std::map<std::string, std::map<char32_t, double>>& getCharStats() const { return this->charStats; }
-    const std::map<char32_t, AltStats>& getConAltStats() const {return this->conAltStats;}
-    const std::map<char32_t, AltStats>& getVowAltStats() const {return this->vowAltStats;}
+    const std::map<char32_t, double>& getCharStats() const { return this->charStats; }
+    const std::map<char32_t, AltStats>& getAltStats() const { return this->altStats; }
 
 };

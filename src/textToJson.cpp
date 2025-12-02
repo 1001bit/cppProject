@@ -1,44 +1,27 @@
 #include "textToJson.hpp"
 #include "utfConvert.hpp"
 
-std::map<std::string, std::map<std::string, double>> textCharStats(const Text& text){
-    std::map<std::string, std::map<std::string, double>> res;
-
-    for(auto& it : text.getCharStats()){
-        const std::string& type = it.first;
-        const std::map<char32_t, double>& stats = it.second;
-        std::map<std::string, double> newStats;
-        
-        for(auto& it1 : stats){
-            const std::string c = conv.to_bytes(it1.first);
-            const double percent = it1.second;
-            newStats[c] = percent;
-        }
-
-        res[type] = newStats;
+std::map<std::string, double> textCharStats(const Text& text){
+    const std::map<char32_t, double>& stats = text.getCharStats();
+    std::map<std::string, double> res;
+    
+    for(auto& it1 : stats){
+        const std::string c = conv.to_bytes(it1.first);
+        const double percent = it1.second;
+        res[c] = percent;
     }
 
     return res;
 }
 
-std::map<std::string, std::map<std::string, AltStats>> textAltStats(const Text& text){
-    std::map<std::string, std::map<std::string, AltStats>> res{
-        {"vowels", {}},
-        {"consonants", {}}
-    };
+std::map<std::string, AltStats> textAltStats(const Text& text){
+    std::map<std::string, AltStats> res;
     
-    for (auto& it : text.getVowAltStats()) {
+    for (auto& it : text.getAltStats()) {
         char32_t c = it.first;
         const AltStats& s = it.second;
 
-        res["vowels"][conv.to_bytes(c)] = s;
-    }
-
-    for (auto& it : text.getConAltStats()) {
-        char32_t c = it.first;
-        const AltStats& s = it.second;
-
-        res["consonants"][conv.to_bytes(c)] = s;
+        res[conv.to_bytes(c)] = s;
     }
 
     return res; 

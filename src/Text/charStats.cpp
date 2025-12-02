@@ -20,25 +20,21 @@ std::map<char32_t, int> getCharCount(std::ifstream& inFile){
 
 void Text::initCharStats(std::ifstream& inFile){
     std::map<char32_t, int> charCount = getCharCount(inFile);
+    std::map<char32_t, double>& charStats = this->charStats;
 
-    std::map<std::string, std::map<char32_t, double>>& charStats = this->charStats;
+    const std::u32string& chars = charTypes.at("all");
+    double totalCnt = 0;
 
-    for(auto& it : charTypes){
-        const std::string& type = it.first;
-        const std::u32string& chars = it.second;
-        double totalCnt = 0;
+    for(char32_t c : chars){
+        totalCnt += charCount[c];
+        charStats[c] = 0;
+    }
 
-        for(char32_t c : chars){
-            totalCnt += charCount[c];
-            charStats[type][c] = 0;
-        }
+    if(totalCnt == 0){
+        return;
+    }
 
-        if(totalCnt == 0){
-            break;
-        }
-
-        for(char32_t c : chars){
-            charStats[type][c] = charCount[c]/totalCnt;
-        }
+    for(char32_t c : chars){
+        charStats[c] = charCount[c]/totalCnt;
     }
 }

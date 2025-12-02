@@ -3,55 +3,45 @@
 
 #include <iostream>
 #include <set>
+#include <vector>
 
 void Text::initAltStats(std::ifstream& inFile){
     std::string line;
 
-    std::map<char32_t, AltStats> vowAltStats;
-    std::map<char32_t, AltStats> conAltStats;
-
-    for(char32_t c : charTypes.at("vows")){
-        vowAltStats[c] = {
-            0, 0, 0, 0
-        };
+    std::map<char32_t, AltStats>& altStats = this->altStats;
+    for(char32_t c : (charTypes.at("vows") + charTypes.at("cons"))){
+        altStats[c] = AltStats{0, 0, 0, 0};
     }
 
-    for(char32_t c : charTypes.at("cons")){
-        conAltStats[c] = {
-            0, 0, 0, 0
-        };
-    }
+    const std::set<char32_t> vows(charTypes.at("vows").begin(), charTypes.at("vows").end());
+    const std::set<char32_t> cons(charTypes.at("cons").begin(), charTypes.at("cons").end());
 
     while(getline(inFile, line)){
         std::u32string converted = conv.from_bytes(line);
         for (size_t i = 0; i < converted.size(); i++){
             char32_t c = converted[i];
             
-            AltStats* stats = nullptr;
-            if (vowAltStats.count(c)){
-                stats = &vowAltStats[c];
-            } else if (conAltStats.count(c)){
-                stats = &conAltStats[c];
-            } else {
+            if (!altStats.contains(c)){
                 continue;
             }
+            AltStats& stats = altStats[c];
 
-            if (i > 0 && vowAltStats.count(converted[i-1])){
-                stats->vowBefore += 1;
+            if (i > 0 && vows.count(converted[i-1])){
+                stats.vowBefore += 1;
             }
-            if (i > 0 && conAltStats.count(converted[i-1])){
-                stats->conBefore += 1;
+            if (i > 0 && cons.count(converted[i-1])){
+                stats.conBefore += 1;
             }
-            if (i < converted.size()-1 && vowAltStats.count(converted[i+1])){
-                stats->vowAfter += 1;
+            if (i < converted.size()-1 && vows.count(converted[i+1])){
+                stats.vowAfter += 1;
             }
-            if (i < converted.size()-1 && conAltStats.count(converted[i+1])){
-                stats->conAfter += 1;
+            if (i < converted.size()-1 && cons.count(converted[i+1])){
+                stats.conAfter += 1;
             }
         }
     }
 
-    for (auto& it : vowAltStats){
+    for (auto& it : altStats){
         AltStats& s = it.second;
         double totalBefore = s.conBefore + s.vowBefore;
         double totalAfter = s.conAfter + s.vowAfter;
@@ -64,9 +54,5 @@ void Text::initAltStats(std::ifstream& inFile){
             s.conAfter = s.conAfter/totalAfter;
             s.vowAfter = 1-s.conAfter;
         }
-        
     }
-
-    this->vowAltStats = vowAltStats;
-    this->conAltStats = conAltStats;
 }

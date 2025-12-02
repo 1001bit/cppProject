@@ -4,16 +4,38 @@
 #include <vector>
 #include <iostream>
 
-const std::unordered_map<std::string, std::vector<char32_t>> charTypes {
+const std::unordered_map<std::string, std::u32string> charTypes {
     {
         "all", 
-        {
-            U'а', U'б', U'в', U'г', U'д', U'е', U'ё', U'ж', U'з', U'и', U'й', U'к',
-            U'л', U'м', U'н', U'о', U'п', U'р', U'с', U'т', U'у', U'ф', U'х', U'ц',
-            U'ч', U'ш', U'щ', U'ъ', U'ы', U'э', U'ю', U'я',
-
-            ' ', ',', '.', '!', '?', ';', ':'
-        }
+        U"абвгдеёжзийклмнопрстуфхцчшщъыьэюя ,.!?:;"
+    },
+    {
+        "vows",
+        U"аоуэыяёюеи"
+    },
+    {
+        "cons",
+        U"бвгджзйклмнпрстфхцчшщ"
+    },
+    {
+        "voiced",
+        U"бвгджзлмнр"
+    },
+    {
+        "voiceless",
+        U"пфктшсхцчщ"
+    },
+    {
+        "rare",
+        U"фхцчшщж"
+    },
+    {
+        "other",
+        U"ьъый"
+    },
+    {
+        "punct",
+        U",.!?:;"
     }
 };
 
@@ -38,7 +60,7 @@ void Text::initCharStats(std::ifstream& inFile){
 
     for(auto& it : charTypes){
         const std::string& type = it.first;
-        const std::vector<char32_t>& chars = it.second;
+        const std::u32string& chars = it.second;
         double totalCnt = 0;
 
         for(char32_t c : chars){

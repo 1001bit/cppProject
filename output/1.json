@@ -1,4 +1,196 @@
 {
+  "altStats": {
+    "consonants": {
+      "б": {
+        "conAfter": 0.0,
+        "conBefore": 0.0,
+        "vowAfter": 10.0,
+        "vowBefore": 3.0
+      },
+      "в": {
+        "conAfter": 11.0,
+        "conBefore": 15.0,
+        "vowAfter": 37.0,
+        "vowBefore": 35.0
+      },
+      "г": {
+        "conAfter": 17.0,
+        "conBefore": 0.0,
+        "vowAfter": 7.0,
+        "vowBefore": 16.0
+      },
+      "д": {
+        "conAfter": 13.0,
+        "conBefore": 3.0,
+        "vowAfter": 9.0,
+        "vowBefore": 19.0
+      },
+      "ж": {
+        "conAfter": 2.0,
+        "conBefore": 0.0,
+        "vowAfter": 3.0,
+        "vowBefore": 5.0
+      },
+      "з": {
+        "conAfter": 4.0,
+        "conBefore": 0.0,
+        "vowAfter": 8.0,
+        "vowBefore": 8.0
+      },
+      "й": {
+        "conAfter": 1.0,
+        "conBefore": 0.0,
+        "vowAfter": 0.0,
+        "vowBefore": 10.0
+      },
+      "к": {
+        "conAfter": 10.0,
+        "conBefore": 8.0,
+        "vowAfter": 33.0,
+        "vowBefore": 28.0
+      },
+      "л": {
+        "conAfter": 1.0,
+        "conBefore": 30.0,
+        "vowAfter": 49.0,
+        "vowBefore": 24.0
+      },
+      "м": {
+        "conAfter": 3.0,
+        "conBefore": 1.0,
+        "vowAfter": 6.0,
+        "vowBefore": 23.0
+      },
+      "н": {
+        "conAfter": 5.0,
+        "conBefore": 22.0,
+        "vowAfter": 54.0,
+        "vowBefore": 27.0
+      },
+      "п": {
+        "conAfter": 11.0,
+        "conBefore": 4.0,
+        "vowAfter": 32.0,
+        "vowBefore": 3.0
+      },
+      "р": {
+        "conAfter": 2.0,
+        "conBefore": 26.0,
+        "vowAfter": 48.0,
+        "vowBefore": 12.0
+      },
+      "с": {
+        "conAfter": 76.0,
+        "conBefore": 18.0,
+        "vowAfter": 29.0,
+        "vowBefore": 55.0
+      },
+      "т": {
+        "conAfter": 18.0,
+        "conBefore": 46.0,
+        "vowAfter": 62.0,
+        "vowBefore": 31.0
+      },
+      "ф": {
+        "conAfter": 0.0,
+        "conBefore": 1.0,
+        "vowAfter": 1.0,
+        "vowBefore": 0.0
+      },
+      "х": {
+        "conAfter": 2.0,
+        "conBefore": 0.0,
+        "vowAfter": 1.0,
+        "vowBefore": 17.0
+      },
+      "ц": {
+        "conAfter": 0.0,
+        "conBefore": 0.0,
+        "vowAfter": 1.0,
+        "vowBefore": 1.0
+      },
+      "ч": {
+        "conAfter": 0.0,
+        "conBefore": 2.0,
+        "vowAfter": 19.0,
+        "vowBefore": 13.0
+      },
+      "ш": {
+        "conAfter": 0.0,
+        "conBefore": 0.0,
+        "vowAfter": 0.0,
+        "vowBefore": 0.0
+      },
+      "щ": {
+        "conAfter": 0.0,
+        "conBefore": 0.0,
+        "vowAfter": 5.0,
+        "vowBefore": 5.0
+      }
+    },
+    "vowels": {
+      "а": {
+        "conAfter": 0.8387096774193549,
+        "conBefore": 0.9895833333333334,
+        "vowAfter": 0.16129032258064513,
+        "vowBefore": 0.01041666666666663
+      },
+      "е": {
+        "conAfter": 0.9444444444444444,
+        "conBefore": 0.8352941176470589,
+        "vowAfter": 0.05555555555555558,
+        "vowBefore": 0.16470588235294115
+      },
+      "и": {
+        "conAfter": 0.8809523809523809,
+        "conBefore": 0.945054945054945,
+        "vowAfter": 0.11904761904761907,
+        "vowBefore": 0.05494505494505497
+      },
+      "о": {
+        "conAfter": 0.9390243902439024,
+        "conBefore": 1.0,
+        "vowAfter": 0.060975609756097615,
+        "vowBefore": 0.0
+      },
+      "у": {
+        "conAfter": 0.8666666666666667,
+        "conBefore": 1.0,
+        "vowAfter": 0.1333333333333333,
+        "vowBefore": 0.0
+      },
+      "ы": {
+        "conAfter": 0.9411764705882353,
+        "conBefore": 1.0,
+        "vowAfter": 0.05882352941176472,
+        "vowBefore": 0.0
+      },
+      "э": {
+        "conAfter": 0.0,
+        "conBefore": 0.0,
+        "vowAfter": 0.0,
+        "vowBefore": 0.0
+      },
+      "ю": {
+        "conAfter": 1.0,
+        "conBefore": 0.07692307692307693,
+        "vowAfter": 0.0,
+        "vowBefore": 0.9230769230769231
+      },
+      "я": {
+        "conAfter": 1.0,
+        "conBefore": 0.7222222222222222,
+        "vowAfter": 0.0,
+        "vowBefore": 0.2777777777777778
+      },
+      "ё": {
+        "conAfter": 0.0,
+        "conBefore": 0.0,
+        "vowAfter": 0.0,
+        "vowBefore": 0.0
+      }
+    }
+  },
   "charStats": {
     "all": {
       " ": 0.1859737006887915,

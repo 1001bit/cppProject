@@ -4,43 +4,8 @@
 #include <vector>
 #include <iostream>
 
-const std::unordered_map<std::string, std::u32string> charTypes {
-    {
-        "all", 
-        U"абвгдеёжзийклмнопрстуфхцчшщъыьэюя ,.!?:;"
-    },
-    {
-        "vows",
-        U"аоуэыяёюеи"
-    },
-    {
-        "cons",
-        U"бвгджзйклмнпрстфхцчшщ"
-    },
-    {
-        "voiced",
-        U"бвгджзлмнр"
-    },
-    {
-        "voiceless",
-        U"пфктшсхцчщ"
-    },
-    {
-        "rare",
-        U"фхцчшщж"
-    },
-    {
-        "other",
-        U"ьъый"
-    },
-    {
-        "punct",
-        U",.!?:;"
-    }
-};
-
-std::unordered_map<char32_t, int> getCharCount(std::ifstream& inFile){
-    std::unordered_map<char32_t, int> charCount;
+std::map<char32_t, int> getCharCount(std::ifstream& inFile){
+    std::map<char32_t, int> charCount;
     std::string line;
 
     while(getline(inFile, line)){
@@ -54,9 +19,9 @@ std::unordered_map<char32_t, int> getCharCount(std::ifstream& inFile){
 }
 
 void Text::initCharStats(std::ifstream& inFile){
-    std::unordered_map<char32_t, int> charCount = getCharCount(inFile);
+    std::map<char32_t, int> charCount = getCharCount(inFile);
 
-    std::unordered_map<std::string, std::unordered_map<char32_t, double>>& charStats = this->charStats;
+    std::map<std::string, std::map<char32_t, double>>& charStats = this->charStats;
 
     for(auto& it : charTypes){
         const std::string& type = it.first;

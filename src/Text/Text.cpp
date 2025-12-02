@@ -41,8 +41,10 @@ void Text::countChars(vector<u32string>A){
 
 void Text::countWords(vector<u32string>A){
         vector<u32string>word_list;
+        ofstream o("test.txt", ios::app);
         vector<char32_t> B={' ', ',', '.', '!', '?', ';', ':'};
-        u32string P=U" ,.!?;:-\"";
+        u32string P=U" ,.!?;:-()";
+        //P+=U'"';
         int word_begin;
         int word_end;
         int _min;
@@ -66,23 +68,23 @@ void Text::countWords(vector<u32string>A){
             if(word_end!=0)
             word_end--;
             }
-            /*word_list.resize(size(word_list)+1);
-            word_list[size(word_list)-1]=s.substr(word_begin, word_end-word_begin-1);*/   //does not require string, needs size instead
+            this->wordHandler.resize(size(this->wordHandler)+1);
+            wordHandler[size(wordHandler)-1]=s.substr(word_begin, word_end-word_begin);  //does not require string, needs size instead
             int siz=word_end-word_begin;
             if (siz>0){
             u32string check=s.substr(word_begin, word_end-word_begin);//check
-            ofstream o("test.txt", ios::app);
-            o<<conv.to_bytes(check)<<endl;
 
-            if (this->wordLenCount.count(size(s))>0)
-            this->wordLenCount[size(s)]++;
+            o<<conv.to_bytes(check)<<siz<<endl;
+
+            if (this->wordLenCount.count(siz)>0)
+            this->wordLenCount[siz]++;
             else
-           this->wordLenCount.insert(pair<int,int>{size(s),1});
+           this->wordLenCount.insert(pair<int,int>{siz,1});
             }
             word_begin=word_end+1;
             word_end=s.find_first_of(P,word_begin);
             }
-            leftover_string=s.substr(word_begin,size(s)-word_begin-1);
+            //leftover_string=s.substr(word_begin,siz-word_begin-1);
         }  
     }
 

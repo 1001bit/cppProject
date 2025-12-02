@@ -48,7 +48,8 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "codecvt": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "locale": "cpp"
     },
     "C_Cpp.default.compilerPath": "C:/msys64/ucrt64/bin/gcc.exe"
 }

@@ -1,9 +1,10 @@
 #include "Text.hpp"
+#include "utfConvert.hpp"
 
 #include <codecvt>
 #include <fstream>
 #include <locale>
-
+#include <locale>
 
 
 using namespace std;
@@ -39,7 +40,8 @@ void wordPercentToFile(string path, const unordered_map<int, double>& cnt){
 }
 
 int main(){
-    setlocale(' ',0);
+    //std::setlocale(LC_ALL, "");
+    //std::locale::global(std::locale(""));
     Text* test = new Text("input/1.txt");
 
     unordered_map<char32_t, double> cnt = test->getCharPercentage();

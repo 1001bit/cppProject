@@ -9,7 +9,7 @@ const std::map<std::string, std::u32string> charTypes {
         "letters",
         U"абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
     },
-        {
+    {
         "vows",
         U"аоуэыяёюеи"
     },

@@ -17,4 +17,9 @@ Text::Text(std::string txtPath) {
     inFile.seekg(0);
 
     this->initAltStats(inFile);
+
+    inFile.clear();
+    inFile.seekg(0);
+
+    this->countWords(inFile);
 }

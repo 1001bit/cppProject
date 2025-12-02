@@ -5,9 +5,9 @@ std::map<std::string, double> textCharStats(const Text& text){
     const std::map<char32_t, double>& stats = text.getCharStats();
     std::map<std::string, double> res;
     
-    for(auto& it1 : stats){
-        const std::string c = conv.to_bytes(it1.first);
-        const double percent = it1.second;
+    for(auto& it : stats){
+        const std::string c = conv.to_bytes(it.first);
+        const double percent = it.second;
         res[c] = percent;
     }
 
@@ -27,6 +27,24 @@ std::map<std::string, AltStats> textAltStats(const Text& text){
     return res; 
 }
 
+std::vector<std::pair<std::string, int>> textTopWords(const Text& text){
+    std::vector<std::pair<std::string, int>> res;
+    for (auto& it : text.getTopWords()){
+        res.push_back({conv.to_bytes(it.first), it.second});
+    }
+    return res;
+}
+
+void to_json(nlohmann::json& j, const Text& text) {
+    json obj = json::object();
+
+    obj["charStats"] = textCharStats(text);
+    obj["altStats"] = textAltStats(text);
+    obj["topWords"] = textTopWords(text);
+
+    j = obj;
+}
+
 void to_json(nlohmann::json& j, const AltStats& stats){
     j = std::map<std::string, double>{
         {"conBefore", stats.conBefore},
@@ -36,11 +54,3 @@ void to_json(nlohmann::json& j, const AltStats& stats){
     };
 }
 
-void to_json(nlohmann::json& j, const Text& text) {
-    json obj = json::object();
-
-    obj["charStats"] = textCharStats(text);
-    obj["altStats"] = textAltStats(text);
-
-    j = obj;
-}

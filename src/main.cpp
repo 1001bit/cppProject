@@ -14,7 +14,7 @@ int main(){
     std::locale::global(std::locale(""));
 
     for(const auto& entry : fs::directory_iterator("input")){
-        Text text(entry.path());
+        Text text(entry.path().string());
         json textJson = text;
         
         fs::path outPath = fs::path("output") / entry.path().filename();

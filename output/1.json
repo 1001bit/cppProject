@@ -1,235 +1,250 @@
 {
-  "altStats": {
+  "altCnt": {
     "а": {
-      "conAfter": 0.845360824742268,
-      "conBefore": 0.9916666666666667,
-      "vowAfter": 0.15463917525773196,
-      "vowBefore": 0.008333333333333304
+      "conAfter": 82,
+      "conBefore": 119,
+      "vowAfter": 15,
+      "vowBefore": 1
     },
     "б": {
-      "conAfter": 0.15384615384615385,
-      "conBefore": 0.2,
-      "vowAfter": 0.8461538461538461,
-      "vowBefore": 0.8
+      "conAfter": 2,
+      "conBefore": 1,
+      "vowAfter": 11,
+      "vowBefore": 4
     },
     "в": {
-      "conAfter": 0.22916666666666666,
-      "conBefore": 0.3,
-      "vowAfter": 0.7708333333333334,
-      "vowBefore": 0.7
+      "conAfter": 11,
+      "conBefore": 15,
+      "vowAfter": 37,
+      "vowBefore": 35
     },
     "г": {
-      "conAfter": 0.7083333333333334,
-      "conBefore": 0.0,
-      "vowAfter": 0.29166666666666663,
-      "vowBefore": 1.0
+      "conAfter": 17,
+      "conBefore": 0,
+      "vowAfter": 7,
+      "vowBefore": 16
     },
     "д": {
-      "conAfter": 0.6086956521739131,
-      "conBefore": 0.17391304347826086,
-      "vowAfter": 0.3913043478260869,
-      "vowBefore": 0.8260869565217391
+      "conAfter": 14,
+      "conBefore": 4,
+      "vowAfter": 9,
+      "vowBefore": 19
     },
     "е": {
-      "conAfter": 0.9452054794520548,
-      "conBefore": 0.8372093023255814,
-      "vowAfter": 0.0547945205479452,
-      "vowBefore": 0.16279069767441856
+      "conAfter": 69,
+      "conBefore": 72,
+      "vowAfter": 4,
+      "vowBefore": 14
     },
     "ж": {
-      "conAfter": 0.07407407407407407,
-      "conBefore": 0.125,
-      "vowAfter": 0.9259259259259259,
-      "vowBefore": 0.875
+      "conAfter": 2,
+      "conBefore": 1,
+      "vowAfter": 25,
+      "vowBefore": 7
     },
     "з": {
-      "conAfter": 0.3333333333333333,
-      "conBefore": 0.0,
-      "vowAfter": 0.6666666666666667,
-      "vowBefore": 1.0
+      "conAfter": 4,
+      "conBefore": 0,
+      "vowAfter": 8,
+      "vowBefore": 8
     },
     "и": {
-      "conAfter": 0.8809523809523809,
-      "conBefore": 0.945054945054945,
-      "vowAfter": 0.11904761904761907,
-      "vowBefore": 0.05494505494505497
+      "conAfter": 74,
+      "conBefore": 86,
+      "vowAfter": 10,
+      "vowBefore": 5
     },
     "й": {
-      "conAfter": 1.0,
-      "conBefore": 0.0,
-      "vowAfter": 0.0,
-      "vowBefore": 1.0
+      "conAfter": 1,
+      "conBefore": 0,
+      "vowAfter": 0,
+      "vowBefore": 10
     },
     "к": {
-      "conAfter": 0.23255813953488372,
-      "conBefore": 0.2222222222222222,
-      "vowAfter": 0.7674418604651163,
-      "vowBefore": 0.7777777777777778
+      "conAfter": 10,
+      "conBefore": 8,
+      "vowAfter": 33,
+      "vowBefore": 28
     },
     "л": {
-      "conAfter": 0.02,
-      "conBefore": 0.5555555555555556,
-      "vowAfter": 0.98,
-      "vowBefore": 0.4444444444444444
+      "conAfter": 1,
+      "conBefore": 30,
+      "vowAfter": 49,
+      "vowBefore": 24
     },
     "м": {
-      "conAfter": 0.3333333333333333,
-      "conBefore": 0.041666666666666664,
-      "vowAfter": 0.6666666666666667,
-      "vowBefore": 0.9583333333333334
+      "conAfter": 3,
+      "conBefore": 1,
+      "vowAfter": 6,
+      "vowBefore": 23
     },
     "н": {
-      "conAfter": 0.1,
-      "conBefore": 0.44,
-      "vowAfter": 0.9,
-      "vowBefore": 0.56
+      "conAfter": 6,
+      "conBefore": 22,
+      "vowAfter": 54,
+      "vowBefore": 28
     },
     "о": {
-      "conAfter": 0.9523809523809523,
-      "conBefore": 1.0,
-      "vowAfter": 0.04761904761904767,
-      "vowBefore": 0.0
+      "conAfter": 100,
+      "conBefore": 123,
+      "vowAfter": 5,
+      "vowBefore": 0
     },
     "п": {
-      "conAfter": 0.18181818181818182,
-      "conBefore": 0.13793103448275862,
-      "vowAfter": 0.8181818181818181,
-      "vowBefore": 0.8620689655172413
+      "conAfter": 12,
+      "conBefore": 4,
+      "vowAfter": 54,
+      "vowBefore": 25
     },
     "р": {
-      "conAfter": 0.0392156862745098,
-      "conBefore": 0.6923076923076923,
-      "vowAfter": 0.9607843137254902,
-      "vowBefore": 0.3076923076923077
+      "conAfter": 2,
+      "conBefore": 27,
+      "vowAfter": 49,
+      "vowBefore": 12
     },
     "с": {
-      "conAfter": 0.7238095238095238,
-      "conBefore": 0.2465753424657534,
-      "vowAfter": 0.2761904761904762,
-      "vowBefore": 0.7534246575342466
+      "conAfter": 76,
+      "conBefore": 18,
+      "vowAfter": 29,
+      "vowBefore": 55
     },
     "т": {
-      "conAfter": 0.2222222222222222,
-      "conBefore": 0.6025641025641025,
-      "vowAfter": 0.7777777777777778,
-      "vowBefore": 0.39743589743589747
+      "conAfter": 18,
+      "conBefore": 47,
+      "vowAfter": 63,
+      "vowBefore": 31
     },
     "у": {
-      "conAfter": 0.8666666666666667,
-      "conBefore": 1.0,
-      "vowAfter": 0.1333333333333333,
-      "vowBefore": 0.0
+      "conAfter": 13,
+      "conBefore": 27,
+      "vowAfter": 2,
+      "vowBefore": 0
     },
     "ф": {
-      "conAfter": 0.0,
-      "conBefore": 1.0,
-      "vowAfter": 1.0,
-      "vowBefore": 0.0
+      "conAfter": 0,
+      "conBefore": 1,
+      "vowAfter": 1,
+      "vowBefore": 0
     },
     "х": {
-      "conAfter": 0.6666666666666666,
-      "conBefore": 0.0,
-      "vowAfter": 0.33333333333333337,
-      "vowBefore": 1.0
+      "conAfter": 2,
+      "conBefore": 0,
+      "vowAfter": 1,
+      "vowBefore": 18
     },
     "ц": {
-      "conAfter": 0.0,
-      "conBefore": 0.0,
-      "vowAfter": 1.0,
-      "vowBefore": 1.0
+      "conAfter": 0,
+      "conBefore": 0,
+      "vowAfter": 2,
+      "vowBefore": 2
     },
     "ч": {
-      "conAfter": 0.0,
-      "conBefore": 0.13333333333333333,
-      "vowAfter": 1.0,
-      "vowBefore": 0.8666666666666667
+      "conAfter": 0,
+      "conBefore": 2,
+      "vowAfter": 19,
+      "vowBefore": 13
     },
     "ш": {
-      "conAfter": 0.0,
-      "conBefore": 0.0,
-      "vowAfter": 0.0,
-      "vowBefore": 0.0
+      "conAfter": 0,
+      "conBefore": 0,
+      "vowAfter": 0,
+      "vowBefore": 0
     },
     "щ": {
-      "conAfter": 0.0,
-      "conBefore": 0.0,
-      "vowAfter": 1.0,
-      "vowBefore": 1.0
+      "conAfter": 0,
+      "conBefore": 0,
+      "vowAfter": 5,
+      "vowBefore": 5
     },
     "ы": {
-      "conAfter": 0.9411764705882353,
-      "conBefore": 1.0,
-      "vowAfter": 0.05882352941176472,
-      "vowBefore": 0.0
+      "conAfter": 16,
+      "conBefore": 21,
+      "vowAfter": 1,
+      "vowBefore": 0
     },
     "э": {
-      "conAfter": 0.0,
-      "conBefore": 0.0,
-      "vowAfter": 0.0,
-      "vowBefore": 0.0
+      "conAfter": 0,
+      "conBefore": 0,
+      "vowAfter": 0,
+      "vowBefore": 0
     },
     "ю": {
-      "conAfter": 1.0,
-      "conBefore": 0.07692307692307693,
-      "vowAfter": 0.0,
-      "vowBefore": 0.9230769230769231
+      "conAfter": 6,
+      "conBefore": 1,
+      "vowAfter": 0,
+      "vowBefore": 12
     },
     "я": {
-      "conAfter": 1.0,
-      "conBefore": 0.7222222222222222,
-      "vowAfter": 0.0,
-      "vowBefore": 0.2777777777777778
+      "conAfter": 3,
+      "conBefore": 13,
+      "vowAfter": 0,
+      "vowBefore": 5
     },
     "ё": {
-      "conAfter": 0.0,
-      "conBefore": 0.0,
-      "vowAfter": 0.0,
-      "vowBefore": 0.0
+      "conAfter": 0,
+      "conBefore": 0,
+      "vowAfter": 0,
+      "vowBefore": 0
     }
   },
-  "charStats": {
-    " ": 0.1880787037037037,
-    "!": 0.0,
-    ",": 0.018518518518518517,
-    ".": 0.015046296296296295,
-    ":": 0.0023148148148148147,
-    ";": 0.0023148148148148147,
-    "?": 0.0,
-    "а": 0.07465277777777778,
-    "б": 0.007523148148148148,
-    "в": 0.03993055555555555,
-    "г": 0.016203703703703703,
-    "д": 0.015625,
-    "е": 0.05092592592592592,
-    "ж": 0.01678240740740741,
-    "з": 0.009259259259259259,
-    "и": 0.0625,
-    "й": 0.00636574074074074,
-    "к": 0.02662037037037037,
-    "л": 0.032407407407407406,
-    "м": 0.015046296296296295,
-    "н": 0.03993055555555555,
-    "о": 0.08333333333333333,
-    "п": 0.04456018518518518,
-    "р": 0.030671296296296297,
-    "с": 0.06481481481481481,
-    "т": 0.052662037037037035,
-    "у": 0.015625,
-    "ф": 0.0011574074074074073,
-    "х": 0.01099537037037037,
-    "ц": 0.001736111111111111,
-    "ч": 0.011574074074074073,
-    "ш": 0.0005787037037037037,
-    "щ": 0.003472222222222222,
-    "ъ": 0.0005787037037037037,
-    "ы": 0.01273148148148148,
-    "ь": 0.006944444444444444,
-    "э": 0.0,
-    "ю": 0.007523148148148148,
-    "я": 0.01099537037037037,
-    "ё": 0.0
+  "charCnt": {
+    " ": 325,
+    "(": 8,
+    ")": 8,
+    ",": 32,
+    "-": 3,
+    ".": 26,
+    "/": 1,
+    "1": 1,
+    "2": 3,
+    "3": 3,
+    "4": 1,
+    "5": 1,
+    "6": 1,
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    ":": 4,
+    ";": 4,
+    "a": 1,
+    "b": 1,
+    "c": 1,
+    "d": 1,
+    "e": 1,
+    "f": 1,
+    "а": 129,
+    "б": 13,
+    "в": 69,
+    "г": 28,
+    "д": 27,
+    "е": 88,
+    "ж": 29,
+    "з": 16,
+    "и": 108,
+    "й": 11,
+    "к": 46,
+    "л": 56,
+    "м": 26,
+    "н": 69,
+    "о": 144,
+    "п": 77,
+    "р": 53,
+    "с": 112,
+    "т": 91,
+    "у": 27,
+    "ф": 2,
+    "х": 19,
+    "ц": 3,
+    "ч": 20,
+    "ш": 1,
+    "щ": 6,
+    "ъ": 1,
+    "ы": 22,
+    "ь": 12,
+    "ю": 13,
+    "я": 19
   },
-  "topWords": [
+  "topWordsCnt": [
     [
       "жопа",
       19

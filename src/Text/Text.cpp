@@ -11,12 +11,12 @@ Text::Text(std::string txtPath) {
         throw std::runtime_error("Could not open file: " + txtPath);
     }
 
-    this->initCharStats(inFile);
+    this->initCharCount(inFile);
 
     inFile.clear();
     inFile.seekg(0);
 
-    this->initAltStats(inFile);
+    this->initAltCount(inFile);
 
     inFile.clear();
     inFile.seekg(0);

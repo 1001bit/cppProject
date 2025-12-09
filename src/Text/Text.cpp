@@ -16,7 +16,7 @@ Text::Text(std::string txtPath) {
     inFile.clear();
     inFile.seekg(0);
 
-    this->initAltCount(inFile);
+    this->initConVowAltCount(inFile);
 
     inFile.clear();
     inFile.seekg(0);
@@ -28,4 +28,9 @@ Text::Text(std::string txtPath) {
 
     this->initWordLenCount();
     this->initSentenceLenCount(inFile);
+
+    inFile.clear();
+    inFile.seekg(0);
+
+    this->initEndStartCount(inFile);
 }

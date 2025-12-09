@@ -4,18 +4,25 @@
 #include <map>
 #include <string>
 #include <vector>
-#include "json.hpp"
 
-struct AltCount {
+struct ConVowAltCount {
     int conBefore;
     int conAfter;
     int vowBefore;
     int vowAfter;
 };
 
+struct EndStartCount {
+    int cc;
+    int cv;
+    int vc;
+    int vv;
+};
+
 class Text
 {
 private:
+    // 5 9
     std::map<std::u32string, int> wordsCount;
     void countWords(std::ifstream& inFile);
 
@@ -30,8 +37,12 @@ private:
     void initSentenceLenCount(std::ifstream& inFile);
 
     // 5
-    std::map<char32_t, AltCount> altCount;
-    void initAltCount(std::ifstream& inFile);
+    std::map<char32_t, ConVowAltCount> conVowAltCount;
+    void initConVowAltCount(std::ifstream& inFile);
+
+    // 6
+    EndStartCount endStartCount;
+    void initEndStartCount(std::ifstream& inFile);
 
 public:
     Text(std::string txtPath);
@@ -44,13 +55,11 @@ public:
     const std::map<int, int>& getSentenceLenCount() const { return this->sentenceLenCount; }
 
     // 5
-    const std::map<char32_t, AltCount>& getAltCount() const { return this->altCount; }
+    const std::map<char32_t, ConVowAltCount>& getConVowAltCount() const { return this->conVowAltCount; }
+
+    // 6
+    const EndStartCount& getEndStartCount() const { return this->endStartCount; }
 
     // 9 
     const std::map<std::u32string, int>& getWordsCount() const { return this->wordsCount; }
 };
-
-using nlohmann::json;
-
-void to_json(nlohmann::json& j, const AltCount& cnt);
-void to_json(nlohmann::json& j, const Text& text);

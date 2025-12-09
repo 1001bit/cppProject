@@ -1,6 +1,8 @@
 #include "Text.hpp"
 #include "utfConvert.hpp"
 
+#include "textToJson.hpp"
+
 std::map<std::string, int> textCharCount(const Text& text){
     const std::map<char32_t, int>& cnt = text.getCharCount();
     std::map<std::string, int> res;
@@ -13,12 +15,12 @@ std::map<std::string, int> textCharCount(const Text& text){
     return res;
 }
 
-std::map<std::string, AltCount> textAltCount(const Text& text){
-    std::map<std::string, AltCount> res;
+std::map<std::string, ConVowAltCount> textConVowAltCount(const Text& text){
+    std::map<std::string, ConVowAltCount> res;
     
-    for (auto& it : text.getAltCount()) {
+    for (auto& it : text.getConVowAltCount()) {
         char32_t c = it.first;
-        const AltCount& s = it.second;
+        const ConVowAltCount& s = it.second;
 
         res[conv.to_bytes(c)] = s;
     }
@@ -35,21 +37,7 @@ std::map<std::string, int> textWordsCount(const Text& text){
     return res;
 }
 
-void to_json(nlohmann::json& j, const Text& text) {
-    json obj = json::object();
-
-    obj["charCnt"] = textCharCount(text);
-    obj["altCnt"] = textAltCount(text);
-    obj["wordsCount"] = textWordsCount(text);
-    obj["wordSizeCount"] = text.getWordLenCount();
-    obj["sentenceLenCount"] = text.getSentenceLenCount();
-
-    // TODO: Words/sentence len
-
-    j = obj;
-}
-
-void to_json(nlohmann::json& j, const AltCount& cnt){
+void to_json(nlohmann::json& j, const ConVowAltCount& cnt){
     j = std::map<std::string, int>{
         {"conBefore", cnt.conBefore},
         {"vowBefore", cnt.vowBefore},
@@ -58,3 +46,26 @@ void to_json(nlohmann::json& j, const AltCount& cnt){
     };
 }
 
+void to_json(nlohmann::json& j, const EndStartCount& cnt){
+    j = std::map<std::string, int>{
+        {"conCon", cnt.cc},
+        {"conVow", cnt.cv},
+        {"vowCon", cnt.vc},
+        {"vowVow", cnt.vv},
+    };
+}
+
+void to_json(nlohmann::json& j, const Text& text) {
+    json obj = json::object();
+
+    obj["charCnt"] = textCharCount(text);
+    obj["conVowAltCount"] = textConVowAltCount(text);
+    obj["wordsCount"] = textWordsCount(text);
+    obj["wordSizeCount"] = text.getWordLenCount();
+    obj["sentenceLenCount"] = text.getSentenceLenCount();
+    obj["conVowEndStartCount"] = text.getEndStartCount();
+
+    // TODO: Words/sentence len
+
+    j = obj;
+}

@@ -10,11 +10,10 @@ void Text::initWordLenCount(){
 }
 
 void Text::initSentenceLenCount(std::ifstream& inFile){
-    std::string word;
-    int sentenceLen = 0;
-
     std::set<char> punct{'!', '.', '?'};
     
+    int sentenceLen = 0;
+    std::string word;
     while(inFile >> word){
         sentenceLen++;
         if (punct.contains(word[word.size()-1])) {

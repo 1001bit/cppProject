@@ -1,5 +1,6 @@
 #include "Text.hpp"
 #include "utfConvert.hpp"
+#include "charTypes.hpp"
 
 #include <iostream>
 #include <set>

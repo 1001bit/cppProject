@@ -6,8 +6,6 @@
 #include <vector>
 #include "json.hpp"
 
-extern const std::map<std::string, std::u32string> charTypes;
-
 struct AltCount {
     int conBefore;
     int conAfter;

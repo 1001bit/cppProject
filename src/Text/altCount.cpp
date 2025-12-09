@@ -1,4 +1,5 @@
 #include "Text.hpp"
+#include "charTypes.hpp"
 #include "utfConvert.hpp"
 
 #include <iostream>

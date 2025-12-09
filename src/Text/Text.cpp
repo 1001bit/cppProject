@@ -11,26 +11,26 @@ Text::Text(std::string txtPath) {
         throw std::runtime_error("Could not open file: " + txtPath);
     }
 
-    this->initCharCount(inFile);
-
-    inFile.clear();
-    inFile.seekg(0);
-
-    this->initConVowAltCount(inFile);
-
-    inFile.clear();
-    inFile.seekg(0);
-
+    // 9
     this->countWords(inFile);
 
-    inFile.clear();
-    inFile.seekg(0);
+    // 5
+    this->initConVowAltCount();
+    inFile.clear(); inFile.seekg(0);
 
+    // 1
+    this->initCharCount(inFile);    
+    inFile.clear(); inFile.seekg(0);
+
+    // 2
     this->initWordLenCount();
     this->initSentenceLenCount(inFile);
+    inFile.clear(); inFile.seekg(0);
 
-    inFile.clear();
-    inFile.seekg(0);
-
+    // 6
     this->initEndStartCount(inFile);
+    inFile.clear(); inFile.seekg(0);
+
+    // 7
+    this->initThreeVCInARow();
 }

@@ -55,6 +55,13 @@ void to_json(nlohmann::json& j, const EndStartCount& cnt){
     };
 }
 
+void to_json(nlohmann::json& j, const VowsAndConsCnt& cnt){
+    j = std::map<std::string, int>{
+        {"cons", cnt.cons},
+        {"vows", cnt.vows}
+    };
+}
+
 void to_json(nlohmann::json& j, const Text& text) {
     json obj = json::object();
 
@@ -64,6 +71,7 @@ void to_json(nlohmann::json& j, const Text& text) {
     obj["wordSizeCount"] = text.getWordLenCount();
     obj["sentenceLenCount"] = text.getSentenceLenCount();
     obj["conVowEndStartCount"] = text.getEndStartCount();
+    obj["threeVowsOrConsInARow"] = text.getThreeVowsConsInARow();
 
     // TODO: Words/sentence len
 

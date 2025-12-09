@@ -1,6 +1,6 @@
 {
   "charCnt": {
-    " ": 325,
+    " ": 329,
     "(": 8,
     ")": 8,
     ",": 32,
@@ -24,13 +24,13 @@
     "d": 1,
     "e": 1,
     "f": 1,
-    "а": 129,
+    "а": 130,
     "б": 13,
     "в": 69,
     "г": 28,
-    "д": 27,
+    "д": 28,
     "е": 88,
-    "ж": 29,
+    "ж": 31,
     "з": 16,
     "и": 108,
     "й": 11,
@@ -38,8 +38,8 @@
     "л": 56,
     "м": 26,
     "н": 69,
-    "о": 144,
-    "п": 77,
+    "о": 147,
+    "п": 78,
     "р": 53,
     "с": 112,
     "т": 91,
@@ -59,7 +59,7 @@
   "conVowAltCount": {
     "а": {
       "conAfter": 82,
-      "conBefore": 119,
+      "conBefore": 125,
       "vowAfter": 15,
       "vowBefore": 1
     },
@@ -72,42 +72,42 @@
     "в": {
       "conAfter": 11,
       "conBefore": 15,
-      "vowAfter": 37,
-      "vowBefore": 35
+      "vowAfter": 41,
+      "vowBefore": 40
     },
     "г": {
-      "conAfter": 17,
-      "conBefore": 0,
+      "conAfter": 19,
+      "conBefore": 2,
       "vowAfter": 7,
       "vowBefore": 16
     },
     "д": {
-      "conAfter": 14,
-      "conBefore": 4,
+      "conAfter": 16,
+      "conBefore": 5,
       "vowAfter": 9,
       "vowBefore": 19
     },
     "е": {
-      "conAfter": 69,
+      "conAfter": 71,
       "conBefore": 72,
       "vowAfter": 4,
       "vowBefore": 14
     },
     "ж": {
-      "conAfter": 2,
-      "conBefore": 1,
-      "vowAfter": 25,
+      "conAfter": 3,
+      "conBefore": 2,
+      "vowAfter": 26,
       "vowBefore": 7
     },
     "з": {
       "conAfter": 4,
       "conBefore": 0,
       "vowAfter": 8,
-      "vowBefore": 8
+      "vowBefore": 9
     },
     "и": {
       "conAfter": 74,
-      "conBefore": 86,
+      "conBefore": 87,
       "vowAfter": 10,
       "vowBefore": 5
     },
@@ -120,12 +120,12 @@
     "к": {
       "conAfter": 10,
       "conBefore": 8,
-      "vowAfter": 33,
+      "vowAfter": 34,
       "vowBefore": 28
     },
     "л": {
       "conAfter": 1,
-      "conBefore": 30,
+      "conBefore": 31,
       "vowAfter": 49,
       "vowBefore": 24
     },
@@ -138,38 +138,38 @@
     "н": {
       "conAfter": 6,
       "conBefore": 22,
-      "vowAfter": 54,
-      "vowBefore": 28
+      "vowAfter": 60,
+      "vowBefore": 30
     },
     "о": {
-      "conAfter": 100,
-      "conBefore": 123,
-      "vowAfter": 5,
-      "vowBefore": 0
+      "conAfter": 107,
+      "conBefore": 133,
+      "vowAfter": 7,
+      "vowBefore": 2
     },
     "п": {
-      "conAfter": 12,
+      "conAfter": 23,
       "conBefore": 4,
-      "vowAfter": 54,
-      "vowBefore": 25
+      "vowAfter": 55,
+      "vowBefore": 26
     },
     "р": {
       "conAfter": 2,
-      "conBefore": 27,
-      "vowAfter": 49,
+      "conBefore": 38,
+      "vowAfter": 50,
       "vowBefore": 12
     },
     "с": {
-      "conAfter": 76,
-      "conBefore": 18,
+      "conAfter": 80,
+      "conBefore": 20,
       "vowAfter": 29,
       "vowBefore": 55
     },
     "т": {
       "conAfter": 18,
-      "conBefore": 47,
-      "vowAfter": 63,
-      "vowBefore": 31
+      "conBefore": 49,
+      "vowAfter": 66,
+      "vowBefore": 32
     },
     "у": {
       "conAfter": 13,
@@ -232,7 +232,7 @@
       "vowBefore": 12
     },
     "я": {
-      "conAfter": 3,
+      "conAfter": 4,
       "conBefore": 13,
       "vowAfter": 0,
       "vowBefore": 5
@@ -247,52 +247,156 @@
   "conVowEndStartCount": {
     "conCon": 36,
     "conVow": 14,
-    "vowCon": 98,
+    "vowCon": 99,
     "vowVow": 13
   },
   "sentenceLenCount": [
-    [1, 5],
-    [2, 1],
-    [4, 1],
-    [5, 1],
-    [6, 2],
-    [7, 2],
-    [8, 3],
-    [10, 3],
-    [12, 1],
-    [13, 1],
-    [14, 1],
-    [15, 2],
-    [18, 1],
-    [19, 1],
-    [22, 1],
-    [27, 1]
+    [
+      1,
+      5
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      10,
+      3
+    ],
+    [
+      12,
+      1
+    ],
+    [
+      13,
+      1
+    ],
+    [
+      14,
+      1
+    ],
+    [
+      15,
+      2
+    ],
+    [
+      18,
+      1
+    ],
+    [
+      19,
+      1
+    ],
+    [
+      23,
+      1
+    ],
+    [
+      27,
+      1
+    ]
   ],
+  "threeVowsOrConsInARow": {
+    "cons": 13,
+    "vows": 1
+  },
   "wordSizeCount": [
-    [1, 25],
-    [2, 38],
-    [3, 13],
-    [4, 29],
-    [5, 21],
-    [6, 18],
-    [7, 16],
-    [8, 22],
-    [9, 16],
-    [10, 16],
-    [11, 3],
-    [12, 4],
-    [13, 9],
-    [15, 1],
-    [16, 1],
-    [20, 1],
-    [27, 1]
+    [
+      1,
+      27
+    ],
+    [
+      2,
+      38
+    ],
+    [
+      3,
+      13
+    ],
+    [
+      4,
+      29
+    ],
+    [
+      5,
+      21
+    ],
+    [
+      6,
+      18
+    ],
+    [
+      7,
+      16
+    ],
+    [
+      8,
+      23
+    ],
+    [
+      9,
+      16
+    ],
+    [
+      10,
+      16
+    ],
+    [
+      11,
+      3
+    ],
+    [
+      12,
+      4
+    ],
+    [
+      13,
+      9
+    ],
+    [
+      15,
+      1
+    ],
+    [
+      17,
+      1
+    ],
+    [
+      20,
+      1
+    ],
+    [
+      27,
+      1
+    ]
   ],
   "wordsCount": {
+    "-": 2,
     "а": 1,
     "алфавита": 1,
     "анализ": 1,
     "анализа": 1,
-    "баббдж": 1,
+    "баббдждж": 1,
     "букв": 2,
     "буква": 1,
     "буквам": 2,
@@ -311,7 +415,7 @@
     "гг": 1,
     "гласная": 1,
     "гласной": 1,
-    "гласнуюсогласную": 1,
+    "гласную-согласную": 1,
     "гласны": 1,
     "гласные": 1,
     "гласным": 1,
@@ -325,6 +429,7 @@
     "ен": 1,
     "ено": 1,
     "ж": 1,
+    "жооопа": 1,
     "жопа": 19,
     "жопажопажопа": 1,
     "заканчивается": 1,

@@ -11,7 +11,7 @@ std::u32string maskWord(std::string word){
 
     for(char32_t c : conv.from_bytes(word)){
         c = towlower(c);
-        if (letters.contains(c)){
+        if (letters.contains(c) || c == U'-'){
             res += c;
         }
     }

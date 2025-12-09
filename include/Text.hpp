@@ -19,10 +19,15 @@ struct EndStartCount {
     int vv;
 };
 
+struct VowsAndConsCnt {
+    int cons;
+    int vows;
+};
+
 class Text
 {
 private:
-    // 5 9
+    // 9
     std::map<std::u32string, int> wordsCount;
     void countWords(std::ifstream& inFile);
 
@@ -38,11 +43,15 @@ private:
 
     // 5
     std::map<char32_t, ConVowAltCount> conVowAltCount;
-    void initConVowAltCount(std::ifstream& inFile);
+    void initConVowAltCount();
 
     // 6
     EndStartCount endStartCount;
     void initEndStartCount(std::ifstream& inFile);
+
+    // 7
+    VowsAndConsCnt threeVowsConsInARow;
+    void initThreeVCInARow();
 
 public:
     Text(std::string txtPath);
@@ -59,6 +68,9 @@ public:
 
     // 6
     const EndStartCount& getEndStartCount() const { return this->endStartCount; }
+
+    // 7
+    const VowsAndConsCnt& getThreeVowsConsInARow() const { return this->threeVowsConsInARow; }
 
     // 9 
     const std::map<std::u32string, int>& getWordsCount() const { return this->wordsCount; }

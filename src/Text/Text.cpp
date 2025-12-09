@@ -22,4 +22,10 @@ Text::Text(std::string txtPath) {
     inFile.seekg(0);
 
     this->countWords(inFile);
+
+    inFile.clear();
+    inFile.seekg(0);
+
+    this->initWordLenCount();
+    this->initSentenceLenCount(inFile);
 }

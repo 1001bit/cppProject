@@ -4,6 +4,7 @@
 #include <map>
 #include <string>
 #include <vector>
+#include "json.hpp"
 
 extern const std::map<std::string, std::u32string> charTypes;
 
@@ -47,6 +48,11 @@ public:
     // 5
     const std::map<char32_t, AltCount>& getAltCount() const { return this->altCount; }
 
-    // 9
-    const std::vector<std::pair<std::u32string, int>> getTopWords() const;
+    // 9 
+    const std::map<std::u32string, int>& getWordsCount() const { return this->wordsCount; }
 };
+
+using nlohmann::json;
+
+void to_json(nlohmann::json& j, const AltCount& cnt);
+void to_json(nlohmann::json& j, const Text& text);

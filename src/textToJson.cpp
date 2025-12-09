@@ -1,4 +1,4 @@
-#include "textToJson.hpp"
+#include "Text.hpp"
 #include "utfConvert.hpp"
 
 std::map<std::string, int> textCharCount(const Text& text){
@@ -26,10 +26,11 @@ std::map<std::string, AltCount> textAltCount(const Text& text){
     return res; 
 }
 
-std::vector<std::pair<std::string, int>> textTopWords(const Text& text){
-    std::vector<std::pair<std::string, int>> res;
-    for (auto& it : text.getTopWords()){
-        res.push_back({conv.to_bytes(it.first), it.second});
+std::map<std::string, int> textWordsCount(const Text& text){
+    std::map<std::string, int> res;
+
+    for (auto& it : text.getWordsCount()){
+        res[conv.to_bytes(it.first)] = it.second;
     }
     return res;
 }
@@ -39,7 +40,9 @@ void to_json(nlohmann::json& j, const Text& text) {
 
     obj["charCnt"] = textCharCount(text);
     obj["altCnt"] = textAltCount(text);
-    obj["topWordsCnt"] = textTopWords(text);
+    obj["wordsCount"] = textWordsCount(text);
+    obj["wordSizeCount"] = text.getWordLenCount();
+    obj["sentenceLenCount"] = text.getSentenceLenCount();
 
     // TODO: Words/sentence len
 

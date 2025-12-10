@@ -72,6 +72,7 @@ void to_json(nlohmann::json& j, const Text& text) {
     obj["sentenceLenCount"] = text.getSentenceLenCount();
     obj["conVowEndStartCount"] = text.getEndStartCount();
     obj["threeVowsOrConsInARow"] = text.getThreeVowsConsInARow();
+    obj["twoVowsConsNeighbors"] = text.getTwoVowsConsNeighbors();
 
     // TODO: Words/sentence len
 

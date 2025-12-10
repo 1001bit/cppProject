@@ -1,6 +1,6 @@
 {
   "charCnt": {
-    " ": 329,
+    " ": 334,
     "(": 8,
     ")": 8,
     ",": 32,
@@ -24,8 +24,8 @@
     "d": 1,
     "e": 1,
     "f": 1,
-    "а": 130,
-    "б": 13,
+    "а": 134,
+    "б": 16,
     "в": 69,
     "г": 28,
     "д": 28,
@@ -59,14 +59,14 @@
   "conVowAltCount": {
     "а": {
       "conAfter": 82,
-      "conBefore": 125,
-      "vowAfter": 15,
-      "vowBefore": 1
+      "conBefore": 127,
+      "vowAfter": 17,
+      "vowBefore": 3
     },
     "б": {
-      "conAfter": 2,
-      "conBefore": 1,
-      "vowAfter": 11,
+      "conAfter": 3,
+      "conBefore": 2,
+      "vowAfter": 13,
       "vowBefore": 4
     },
     "в": {
@@ -247,7 +247,7 @@
   "conVowEndStartCount": {
     "conCon": 36,
     "conVow": 14,
-    "vowCon": 99,
+    "vowCon": 101,
     "vowVow": 13
   },
   "sentenceLenCount": [
@@ -308,7 +308,7 @@
       1
     ],
     [
-      23,
+      25,
       1
     ],
     [
@@ -320,6 +320,7 @@
     "cons": 13,
     "vows": 1
   },
+  "twoVowsConsNeighbors": 4,
   "wordSizeCount": [
     [
       1,
@@ -331,11 +332,11 @@
     ],
     [
       3,
-      13
+      14
     ],
     [
       4,
-      29
+      30
     ],
     [
       5,
@@ -396,7 +397,9 @@
     "алфавита": 1,
     "анализ": 1,
     "анализа": 1,
+    "баа": 1,
     "баббдждж": 1,
+    "ббаа": 1,
     "букв": 2,
     "буква": 1,
     "буквам": 2,

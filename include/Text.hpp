@@ -53,6 +53,10 @@ private:
     VowsAndConsCnt threeVowsConsInARow;
     void initThreeVCInARow();
 
+    // 8 
+    int twoVowsConsNeighbors;
+    void initTwoVowsConsNeihgbors(std::ifstream& inFile);
+
 public:
     Text(std::string txtPath);
 
@@ -71,6 +75,9 @@ public:
 
     // 7
     const VowsAndConsCnt& getThreeVowsConsInARow() const { return this->threeVowsConsInARow; }
+
+    // 8
+    int getTwoVowsConsNeighbors() const { return this->twoVowsConsNeighbors; } 
 
     // 9 
     const std::map<std::u32string, int>& getWordsCount() const { return this->wordsCount; }

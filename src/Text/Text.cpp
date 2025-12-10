@@ -33,4 +33,8 @@ Text::Text(std::string txtPath) {
 
     // 7
     this->initThreeVCInARow();
+
+    // 8
+    this->initTwoVowsConsNeihgbors(inFile);
+    inFile.clear(); inFile.seekg(0);
 }

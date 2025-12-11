@@ -11,8 +11,10 @@ Text::Text(std::string txtPath) {
         throw std::runtime_error("Could not open file: " + txtPath);
     }
 
+    Assets assets("assets/charTypes.json", "assets/combinations.json");
+
     // 9
-    this->countWords(inFile);
+    this->countWords(inFile, assets);
     inFile.clear(); inFile.seekg(0);
 
     // 1
@@ -25,20 +27,20 @@ Text::Text(std::string txtPath) {
     inFile.clear(); inFile.seekg(0);
 
     // 4
-    this->initCombsCount();
+    this->initCombsCount(assets);
 
     // 5
-    this->initConVowAltCount();
+    this->initConVowAltCount(assets);
     inFile.clear(); inFile.seekg(0);
 
     // 6
-    this->initEndStartCount(inFile);
+    this->initEndStartCount(inFile, assets);
     inFile.clear(); inFile.seekg(0);
 
     // 7
-    this->initThreeVCInARow();
+    this->initThreeVCInARow(assets);
 
     // 8
-    this->initTwoVowsConsNeihgbors(inFile);
+    this->initTwoVowsConsNeihgbors(inFile, assets);
     inFile.clear(); inFile.seekg(0);
 }

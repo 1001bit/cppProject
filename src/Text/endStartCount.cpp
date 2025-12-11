@@ -1,12 +1,13 @@
 #include "Text.hpp"
-#include "charTypes.hpp"
 #include "utfConvert.hpp"
 #include "maskWord.hpp"
 
 #include <set>
 
-void Text::initEndStartCount(std::ifstream& inFile){
+void Text::initEndStartCount(std::ifstream& inFile, Assets& assets){
     this->endStartCount = {0,0,0,0};
+
+    const std::map<std::string, std::u32string>& charTypes = assets.getCharTypes();
 
     const std::set<char32_t> vows(charTypes.at("vows").begin(), charTypes.at("vows").end());
     const std::set<char32_t> cons(charTypes.at("cons").begin(), charTypes.at("cons").end());
@@ -14,7 +15,7 @@ void Text::initEndStartCount(std::ifstream& inFile){
     std::u32string prevWord = U"";
     std::string word;
     while(inFile >> word){
-        std::u32string masked = maskWord(word);
+        std::u32string masked = maskWord(word, charTypes.at("letters") + U'-');
         
         if (prevWord == U""){
             prevWord = masked;

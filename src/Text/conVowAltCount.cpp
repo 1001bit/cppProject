@@ -1,17 +1,18 @@
 #include "Text.hpp"
-#include "charTypes.hpp"
 
 #include <iostream>
 #include <set>
 #include <vector>
 
-void Text::initConVowAltCount(){
-    for(char32_t c : (charTypes.at("vows") + charTypes.at("cons"))){
-        conVowAltCount[c] = ConVowAltCount{0, 0, 0, 0};
-    }
+void Text::initConVowAltCount(Assets& assets){
+    const std::map<std::string, std::u32string>& charTypes = assets.getCharTypes();
 
     const std::set<char32_t> vows(charTypes.at("vows").begin(), charTypes.at("vows").end());
     const std::set<char32_t> cons(charTypes.at("cons").begin(), charTypes.at("cons").end());
+
+    for(char32_t c : (charTypes.at("vows") + charTypes.at("cons"))){
+        conVowAltCount[c] = ConVowAltCount{0, 0, 0, 0};
+    }
 
     for (auto& it : this->wordsCount){
         const std::u32string& word = it.first;

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Assets.hpp"
+
 #include <fstream>
 #include <map>
 #include <string>
@@ -29,7 +31,7 @@ class Text
 private:
     // 9
     std::map<std::u32string, int> wordsCount;
-    void countWords(std::ifstream& inFile);
+    void countWords(std::ifstream& inFile, Assets& assets);
 
     // 1
     std::map<char32_t, int> charCount;
@@ -45,23 +47,23 @@ private:
 
     // 4
     std::map<std::u32string, int> combsCount;
-    void initCombsCount();
+    void initCombsCount(Assets& assets);
 
     // 5
     std::map<char32_t, ConVowAltCount> conVowAltCount;
-    void initConVowAltCount();
+    void initConVowAltCount(Assets& assets);
 
     // 6
     EndStartCount endStartCount;
-    void initEndStartCount(std::ifstream& inFile);
+    void initEndStartCount(std::ifstream& inFile, Assets& assets);
 
     // 7
     VowsAndConsCnt threeVowsConsInARow;
-    void initThreeVCInARow();
+    void initThreeVCInARow(Assets& assets);
 
     // 8 
     int twoVowsConsNeighbors;
-    void initTwoVowsConsNeihgbors(std::ifstream& inFile);
+    void initTwoVowsConsNeihgbors(std::ifstream& inFile, Assets& assets);
 
 public:
     Text(std::string txtPath);

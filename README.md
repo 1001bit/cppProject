@@ -6,7 +6,9 @@
 * src - для c++ 
 * include - для хедеров
 
-### Сборка и запусе
+### TODO: Python
+
+### Сборка
 * Для windows: ```mingw32-make```
 * Для Linux: ```make ```
 

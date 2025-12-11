@@ -500,7 +500,7 @@
     "vows": 1
   },
   "twoVowsConsNeighbors": 44,
-  "wordSizeCount": [
+  "wordLenCount": [
     [
       1,
       484

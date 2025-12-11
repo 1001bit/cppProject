@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
-from app.barPlotter import BarPercentagePlotter
+from app.percentagePlotter import PercentagePlotter, PlotType
 import json
 
 assetsPath = "assets/"
 
-def charsPlot(charCounts, colors):
+def charsPlot(charCounts: list[dict[str | int, int]], colors):
     charAxes: dict[str, Axes] = {}
 
     n = 8
@@ -20,14 +20,14 @@ def charsPlot(charCounts, colors):
         charAxes["punct"]
     ) = plt.subplots(n, 1, figsize=(30, 5*n))
 
-    plotter = BarPercentagePlotter(colors)
+    plotter = PercentagePlotter(colors)
 
     with open(assetsPath + "charTypes.json") as f:
         charTypes = json.load(f)
 
         for key in charAxes:
             ax = charAxes[key]
-            plotter.plot(ax, charCounts, charTypes[key])
+            plotter.plot(ax, charCounts, PlotType.BAR, labels=charTypes[key])
             ax.set_title(key)
 
     return charFig

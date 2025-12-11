@@ -77,7 +77,7 @@ void to_json(nlohmann::json& j, const Text& text) {
     obj["charCnt"] = textCharCount(text);
     obj["conVowAltCount"] = textConVowAltCount(text);
     obj["wordsCount"] = textWordsCount(text);
-    obj["wordSizeCount"] = text.getWordLenCount();
+    obj["wordLenCount"] = text.getWordLenCount();
     obj["sentenceLenCount"] = text.getSentenceLenCount();
     obj["conVowEndStartCount"] = text.getEndStartCount();
     obj["threeVowsOrConsInARow"] = text.getThreeVowsConsInARow();

@@ -1,6 +1,8 @@
 #include "Text.hpp"
+#include "utfConvert.hpp"
 
 #include <set>
+#include <iostream>
 
 void Text::initCombsCount(){
     const std::vector<std::u32string> combinations{
@@ -13,7 +15,9 @@ void Text::initCombsCount(){
         int wordCount = it.second;
 
         for (auto& comb : combinations){
-            this->combsCount[comb] += wordCount * (word.find(comb) != std::u32string::npos);
+            for (size_t pos = word.find(comb); pos != std::u32string::npos; pos = word.find(comb, pos+1)){
+                this->combsCount[comb] += wordCount;
+            }
         }
     }
 }

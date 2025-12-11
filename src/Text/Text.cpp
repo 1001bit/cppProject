@@ -13,9 +13,6 @@ Text::Text(std::string txtPath) {
 
     // 9
     this->countWords(inFile);
-
-    // 5
-    this->initConVowAltCount();
     inFile.clear(); inFile.seekg(0);
 
     // 1
@@ -25,6 +22,13 @@ Text::Text(std::string txtPath) {
     // 2
     this->initWordLenCount();
     this->initSentenceLenCount(inFile);
+    inFile.clear(); inFile.seekg(0);
+
+    // 4
+    this->initCombsCount();
+
+    // 5
+    this->initConVowAltCount();
     inFile.clear(); inFile.seekg(0);
 
     // 6

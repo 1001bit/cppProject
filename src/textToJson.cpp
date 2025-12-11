@@ -3,40 +3,6 @@
 
 #include "textToJson.hpp"
 
-std::map<std::string, int> textCharCount(const Text& text){
-    const std::map<char32_t, int>& cnt = text.getCharCount();
-    std::map<std::string, int> res;
-    
-    for(auto& it : cnt){
-        const std::string c = conv.to_bytes(it.first);
-        res[c] = it.second;
-    }
-
-    return res;
-}
-
-std::map<std::string, ConVowAltCount> textConVowAltCount(const Text& text){
-    std::map<std::string, ConVowAltCount> res;
-    
-    for (auto& it : text.getConVowAltCount()) {
-        char32_t c = it.first;
-        const ConVowAltCount& s = it.second;
-
-        res[conv.to_bytes(c)] = s;
-    }
-
-    return res; 
-}
-
-std::map<std::string, int> textWordsCount(const Text& text){
-    std::map<std::string, int> res;
-
-    for (auto& it : text.getWordsCount()){
-        res[conv.to_bytes(it.first)] = it.second;
-    }
-    return res;
-}
-
 void to_json(nlohmann::json& j, const ConVowAltCount& cnt){
     j = std::map<std::string, int>{
         {"conBefore", cnt.conBefore},
@@ -62,6 +28,49 @@ void to_json(nlohmann::json& j, const VowsAndConsCnt& cnt){
     };
 }
 
+std::map<std::string, int> textCharCount(const Text& text){
+    const std::map<char32_t, int>& cnt = text.getCharCount();
+    std::map<std::string, int> res;
+    
+    for(auto& it : cnt){
+        const std::string c = conv.to_bytes(it.first);
+        res[c] = it.second;
+    }
+
+    return res;
+}
+
+std::map<std::string, ConVowAltCount> textConVowAltCount(const Text& text){
+    std::map<std::string, ConVowAltCount> res;
+    
+    for (auto& it : text.getConVowAltCount()) {
+        char32_t c = it.first;
+        const ConVowAltCount& s = it.second;
+
+        res[conv.to_bytes(c)] = s;
+    }
+
+    return res; 
+}
+
+std::map<std::string, int> textCombsCount(const Text& text){
+    std::map<std::string, int> res;
+    for (auto& it : text.getCombsCount()){
+        res[conv.to_bytes(it.first)] = it.second;
+    }
+    return res;
+}
+
+
+std::map<std::string, int> textWordsCount(const Text& text){
+    std::map<std::string, int> res;
+    
+    for (auto& it : text.getWordsCount()){
+        res[conv.to_bytes(it.first)] = it.second;
+    }
+    return res;
+}
+
 void to_json(nlohmann::json& j, const Text& text) {
     json obj = json::object();
 
@@ -73,8 +82,7 @@ void to_json(nlohmann::json& j, const Text& text) {
     obj["conVowEndStartCount"] = text.getEndStartCount();
     obj["threeVowsOrConsInARow"] = text.getThreeVowsConsInARow();
     obj["twoVowsConsNeighbors"] = text.getTwoVowsConsNeighbors();
-
-    // TODO: Words/sentence len
+    obj["combinationsCount"] = textCombsCount(text);
 
     j = obj;
 }

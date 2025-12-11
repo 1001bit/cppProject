@@ -41,6 +41,12 @@ private:
     void initWordLenCount();
     void initSentenceLenCount(std::ifstream& inFile);
 
+    // 3 skipped
+
+    // 4
+    std::map<std::u32string, int> combsCount;
+    void initCombsCount();
+
     // 5
     std::map<char32_t, ConVowAltCount> conVowAltCount;
     void initConVowAltCount();
@@ -66,6 +72,9 @@ public:
     // 2
     const std::map<int, int>& getWordLenCount() const { return this->wordLenCount; }
     const std::map<int, int>& getSentenceLenCount() const { return this->sentenceLenCount; }
+
+    // 4
+    const std::map<std::u32string, int>& getCombsCount() const { return this->combsCount; }
 
     // 5
     const std::map<char32_t, ConVowAltCount>& getConVowAltCount() const { return this->conVowAltCount; }

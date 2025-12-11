@@ -35,9 +35,11 @@ void Text::initThreeVCInARow(){
 
             if (vowStreak == 3){
                 this->threeVowsConsInARow.vows += wordCount;
+                vowStreak = 0;
             }
             if (conStreak == 3){
                 this->threeVowsConsInARow.cons += wordCount;
+                conStreak = 0;
             }
         }
     }

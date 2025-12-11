@@ -16,7 +16,7 @@ void Text::initTwoVowsConsNeihgbors(std::ifstream& inFile){
     while(inFile >> word){
         std::u32string masked = maskWord(word);
         
-        if (prevWord.size() < 2 || masked.size() < 2){
+        if (prevWord == U""){
             prevWord = masked;
             continue;
         }

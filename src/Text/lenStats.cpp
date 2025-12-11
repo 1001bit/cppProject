@@ -21,4 +21,5 @@ void Text::initSentenceLenCount(std::ifstream& inFile){
             sentenceLen = 0;
         }
     }
+    this->sentenceLenCount[sentenceLen]++;
 }

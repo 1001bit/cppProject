@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="release" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/release" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/release" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Text/Text.cpp" />
+		<Unit filename="Text/charCount.cpp" />
+		<Unit filename="Text/charTypes.cpp" />
+		<Unit filename="Text/combsCount.cpp" />
+		<Unit filename="Text/conVowAltCount.cpp" />
+		<Unit filename="Text/countWords.cpp" />
+		<Unit filename="Text/endStartCount.cpp" />
+		<Unit filename="Text/lenStats.cpp" />
+		<Unit filename="Text/threeVCInARow.cpp" />
+		<Unit filename="Text/twoVowsConsInARow.cpp" />
+		<Unit filename="include/Text.hpp" />
+		<Unit filename="include/charTypes.hpp" />
+		<Unit filename="include/json.hpp" />
+		<Unit filename="include/maskWord.hpp" />
+		<Unit filename="include/textToJson.hpp" />
+		<Unit filename="include/utfConvert.hpp" />
+		<Unit filename="input/1.txt" />
+		<Unit filename="main.cpp" />
+		<Unit filename="maskWord.cpp" />
+		<Unit filename="output/1.json" />
+		<Unit filename="textToJson.cpp" />
+		<Unit filename="utfConvert.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

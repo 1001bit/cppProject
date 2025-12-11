@@ -5,6 +5,7 @@ from matplotlib.axes import Axes
 from app.charsPlot import *
 from app.lenPlots import *
 from app.prepsPlot import *
+from app.combinationPlot import *
 
 def main() -> None:
     files = []
@@ -31,6 +32,9 @@ def main() -> None:
 
     prepsFig = prepsPlot([f["wordsCount"] for f in files], colors)
     prepsFig.savefig(plotsPath + "preps.png")
+
+    combinationsFig = combinationsPlot([f["combinationsCount"] for f in files], colors)
+    combinationsFig.savefig(plotsPath + "combinations.png")
 
 if __name__ == "__main__":
     main()

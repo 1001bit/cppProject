@@ -3,8 +3,18 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="release" />
+		<Option makefile="Makefile.mak" />
+		<Option execution_dir="../release" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<MakeCommands>
+			<Build command="$make -f $makefile $target" />
+			<CompileFile command="$make -f $makefile $file" />
+			<Clean command="$make -f $makefile clean$target" />
+			<DistClean command="$make -f $makefile distclean$target" />
+			<AskRebuildNeeded command="$make -q -f $makefile $target" />
+			<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+		</MakeCommands>
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/release" prefix_auto="1" extension_auto="1" />
@@ -26,22 +36,21 @@
 				<Linker>
 					<Add option="-s" />
 				</Linker>
+				<MakeCommands>
+					<Build command="$make -f $makefile main.exe" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean$target" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile main.exe &gt; $(CMD_NULL)" />
+				</MakeCommands>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Text/Text.cpp" />
-		<Unit filename="Text/charCount.cpp" />
-		<Unit filename="Text/charTypes.cpp" />
-		<Unit filename="Text/combsCount.cpp" />
-		<Unit filename="Text/conVowAltCount.cpp" />
-		<Unit filename="Text/countWords.cpp" />
-		<Unit filename="Text/endStartCount.cpp" />
-		<Unit filename="Text/lenStats.cpp" />
-		<Unit filename="Text/threeVCInARow.cpp" />
-		<Unit filename="Text/twoVowsConsInARow.cpp" />
+		<Unit filename="Makefile.mak" />
 		<Unit filename="include/Text.hpp" />
 		<Unit filename="include/charTypes.hpp" />
 		<Unit filename="include/json.hpp" />
@@ -49,11 +58,21 @@
 		<Unit filename="include/textToJson.hpp" />
 		<Unit filename="include/utfConvert.hpp" />
 		<Unit filename="input/1.txt" />
-		<Unit filename="main.cpp" />
-		<Unit filename="maskWord.cpp" />
 		<Unit filename="output/1.json" />
-		<Unit filename="textToJson.cpp" />
-		<Unit filename="utfConvert.cpp" />
+		<Unit filename="src/Text/Text.cpp" />
+		<Unit filename="src/Text/charCount.cpp" />
+		<Unit filename="src/Text/charTypes.cpp" />
+		<Unit filename="src/Text/combsCount.cpp" />
+		<Unit filename="src/Text/conVowAltCount.cpp" />
+		<Unit filename="src/Text/countWords.cpp" />
+		<Unit filename="src/Text/endStartCount.cpp" />
+		<Unit filename="src/Text/lenStats.cpp" />
+		<Unit filename="src/Text/threeVCInARow.cpp" />
+		<Unit filename="src/Text/twoVowsConsInARow.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/maskWord.cpp" />
+		<Unit filename="src/textToJson.cpp" />
+		<Unit filename="src/utfConvert.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

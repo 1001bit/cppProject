@@ -1,5 +1,5 @@
-#include "Text.hpp"
-#include "charTypes.hpp"
+#include "../../include/Text.hpp"
+#include "../../include/charTypes.hpp"
 
 #include <iostream>
 #include <set>
@@ -19,7 +19,7 @@ void Text::initConVowAltCount(){
 
         for (size_t i = 0; i < word.size(); i++){
             char32_t c = word[i];
-            
+
             if (!conVowAltCount.contains(c)){
                 continue;
             }
@@ -27,8 +27,8 @@ void Text::initConVowAltCount(){
 
             cnt.vowBefore += wordCount * (i > 0 && vows.contains(word[i-1]));
             cnt.conBefore += wordCount * (i > 0 && cons.contains(word[i-1]));
-            cnt.vowAfter += wordCount * (i < word.size()-1 && vows.count(word[i+1]));
-            cnt.conAfter += wordCount * (i < word.size()-1 && cons.count(word[i+1]));
+            cnt.vowAfter += wordCount * (i + 1 < word.size() && vows.contains(word[i+1]));
+            cnt.conAfter += wordCount * (i + 1 < word.size() && cons.contains(word[i+1]));
         }
     }
 }

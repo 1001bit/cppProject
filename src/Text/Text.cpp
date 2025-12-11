@@ -1,5 +1,5 @@
-#include "Text.hpp"
-#include "utfConvert.hpp"
+#include "../../include/Text.hpp"
+#include "../../include/charTypes.hpp"
 
 #include <fstream>
 #include <iostream>
@@ -16,7 +16,7 @@ Text::Text(std::string txtPath) {
     inFile.clear(); inFile.seekg(0);
 
     // 1
-    this->initCharCount(inFile);    
+    this->initCharCount(inFile);
     inFile.clear(); inFile.seekg(0);
 
     // 2

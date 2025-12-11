@@ -1,63 +1,112 @@
 # depslib dependency file v1.0
-1765459983 source:c:\users\user\desktop\10011001001\cpp_project\release\text\chartypes.cpp
-	"../include/charTypes.hpp"
-
-1765459098 c:\users\user\desktop\10011001001\cpp_project\release\include\chartypes.hpp
-	<map>
-	<string>
-
-1765460013 source:c:\users\user\desktop\10011001001\cpp_project\release\text\charcount.cpp
-	"../include/Text.hpp"
-	"../include/utfConvert.hpp"
-	<vector>
+1743445502 source:c:\users\user\desktop\10011001001\cpp_project\release\cpp_project\main.cpp
 	<iostream>
 
-1765459098 c:\users\user\desktop\10011001001\cpp_project\release\include\text.hpp
-	<fstream>
-	<map>
-	<string>
-	<vector>
+1743445502 source:c:\users\user\desktop\10011001001\cpp_project\release\main.cpp
+	<iostream>
 
-1765459098 c:\users\user\desktop\10011001001\cpp_project\release\include\utfconvert.hpp
-	<codecvt>
-	<locale>
-	<string>
-
-1765460013 source:c:\users\user\desktop\10011001001\cpp_project\release\text\combscount.cpp
-	"../include/Text.hpp"
-	<set>
-
-1765460060 source:c:\users\user\desktop\10011001001\cpp_project\release\text\countwords.cpp
-	"../include/Text.hpp"
-	"../include/utfConvert.hpp"
-	"../include/charTypes.hpp"
+1765480487 source:c:\users\user\desktop\10011001001\cpp_project\release\src\maskword.cpp
 	"../include/maskWord.hpp"
-	<iostream>
-	<set>
 
-1765459098 c:\users\user\desktop\10011001001\cpp_project\release\include\maskword.hpp
+1765458973 c:\users\user\desktop\10011001001\cpp_project\release\include\maskword.hpp
 	"charTypes.hpp"
 	"utfConvert.hpp"
 	<string>
 	<set>
 
-1765460124 source:c:\users\user\desktop\10011001001\cpp_project\release\text\text.cpp
-	"../include/Text.hpp"
-	"../include/utfConvert.hpp"
+1765458973 c:\users\user\desktop\10011001001\cpp_project\release\include\chartypes.hpp
+	<map>
+	<string>
+
+1765458973 c:\users\user\desktop\10011001001\cpp_project\release\include\utfconvert.hpp
+	<codecvt>
+	<locale>
+	<string>
+
+1765480502 source:c:\users\user\desktop\10011001001\cpp_project\release\src\text\charcount.cpp
+	"../../include/Text.hpp"
+	"../../include/utfConvert.hpp"
+	<vector>
+	<iostream>
+
+1765458973 c:\users\user\desktop\10011001001\cpp_project\release\include\text.hpp
+	<fstream>
+	<map>
+	<string>
+	<vector>
+
+1765480510 source:c:\users\user\desktop\10011001001\cpp_project\release\src\text\chartypes.cpp
+	"../../include/charTypes.hpp"
+
+1765480515 source:c:\users\user\desktop\10011001001\cpp_project\release\src\text\combscount.cpp
+	"../../include/Text.hpp"
+	<set>
+
+1765480522 source:c:\users\user\desktop\10011001001\cpp_project\release\src\text\convowaltcount.cpp
+	"../../include/Text.hpp"
+	"../../include/charTypes.hpp"
+	<iostream>
+	<set>
+	<vector>
+
+1765480537 source:c:\users\user\desktop\10011001001\cpp_project\release\src\text\countwords.cpp
+	"../../include/Text.hpp"
+	"../../include/utfConvert.hpp"
+	"../../include/charTypes.hpp"
+	"../../include/maskWord.hpp"
+	<iostream>
+	<set>
+
+1765480558 source:c:\users\user\desktop\10011001001\cpp_project\release\src\text\endstartcount.cpp
+	"../../include/Text.hpp"
+	"../../include/charTypes.hpp"
+	"../../include/utfConvert.hpp"
+	"../../include/maskWord.hpp"
+	<set>
+
+1765480566 source:c:\users\user\desktop\10011001001\cpp_project\release\src\text\lenstats.cpp
+	"../../include/Text.hpp"
+	"../../include/utfConvert.hpp"
+	<set>
+
+1765480576 source:c:\users\user\desktop\10011001001\cpp_project\release\src\text\text.cpp
+	"../../include/Text.hpp"
+	"../../include/charTypes.hpp"
 	<fstream>
 	<iostream>
 	<string>
 
-1765460240 source:c:\users\user\desktop\10011001001\cpp_project\release\texttojson.cpp
-	"include/Text.hpp"
-	"include/utfConvert.hpp"
-	"include/textToJson.hpp"
+1765480586 source:c:\users\user\desktop\10011001001\cpp_project\release\src\text\threevcinarow.cpp
+	"../../include/Text.hpp"
+	"../../include/charTypes.hpp"
+	<iostream>
+	<set>
+	<vector>
 
-1765459098 c:\users\user\desktop\10011001001\cpp_project\release\include\texttojson.hpp
+1765480599 source:c:\users\user\desktop\10011001001\cpp_project\release\src\text\twovowsconsinarow.cpp
+	"../../include/Text.hpp"
+	"../../include/charTypes.hpp"
+	"../../include/utfConvert.hpp"
+	"../../include/maskWord.hpp"
+	<set>
+
+1765480615 source:c:\users\user\desktop\10011001001\cpp_project\release\src\utfconvert.cpp
+	"../include/utfConvert.hpp"
+
+1765480634 source:c:\users\user\desktop\10011001001\cpp_project\release\src\main.cpp
+	"../include/Text.hpp"
+	"../include/utfConvert.hpp"
+	"../include/textToJson.hpp"
+	<fstream>
+	<filesystem>
+	<iostream>
+	<locale>
+
+1765458973 c:\users\user\desktop\10011001001\cpp_project\release\include\texttojson.hpp
 	"json.hpp"
 	"Text.hpp"
 
-1765459098 c:\users\user\desktop\10011001001\cpp_project\release\include\json.hpp
+1765458973 c:\users\user\desktop\10011001001\cpp_project\release\include\json.hpp
 	<algorithm>
 	<cstddef>
 	<functional>
@@ -260,56 +309,8 @@
 	<any>
 	<string_view>
 
-1765460250 source:c:\users\user\desktop\10011001001\cpp_project\release\utfconvert.cpp
-	"include/utfConvert.hpp"
-
-1765461711 source:c:\users\user\desktop\10011001001\cpp_project\release\maskword.cpp
-	"include\maskWord.hpp"
-
-1765461420 c:\users\user\desktop\10011001001\cpp_project\release\include\set.hpp
-	<bits/concept_check.h>
-	<initializer_list>
-	<bits/ranges_base.h>
-
-1765461590 source:c:\users\user\desktop\10011001001\cpp_project\release\text\convowaltcount.cpp
-	"../include/Text.hpp"
-	"../include/charTypes.hpp"
-	<iostream>
-	<set>
-	<vector>
-
-1765461590 source:c:\users\user\desktop\10011001001\cpp_project\release\text\endstartcount.cpp
-	"../include/Text.hpp"
-	"../include/charTypes.hpp"
-	"../include/utfConvert.hpp"
-	"../include/maskWord.hpp"
-	<set>
-
-1765461590 source:c:\users\user\desktop\10011001001\cpp_project\release\text\lenstats.cpp
+1765480643 source:c:\users\user\desktop\10011001001\cpp_project\release\src\texttojson.cpp
 	"../include/Text.hpp"
 	"../include/utfConvert.hpp"
-	<set>
-
-1765461590 source:c:\users\user\desktop\10011001001\cpp_project\release\text\threevcinarow.cpp
-	"../include/Text.hpp"
-	"../include/charTypes.hpp"
-	<iostream>
-	<set>
-	<vector>
-
-1765461590 source:c:\users\user\desktop\10011001001\cpp_project\release\text\twovowsconsinarow.cpp
-	"../include/Text.hpp"
-	"../include/utfConvert.hpp"
-	"../include/charTypes.hpp"
-	"../include/maskWord.hpp"
-	<set>
-
-1765463775 source:c:\users\user\desktop\10011001001\cpp_project\release\main.cpp
-	"include\Text.hpp"
-	"include\utfConvert.hpp"
-	"include\textToJson.hpp"
-	<fstream>
-	<filesystem>
-	<iostream>
-	<locale>
+	"../include/textToJson.hpp"
 

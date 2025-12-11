@@ -1,4 +1,4 @@
-#include "maskWord.hpp"
+#include "../include/maskWord.hpp"
 
 std::u32string maskWord(std::string word){
     std::u32string res = U"";

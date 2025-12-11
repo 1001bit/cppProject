@@ -1,7 +1,7 @@
-#include "Text.hpp"
-#include "utfConvert.hpp"
-#include "charTypes.hpp"
-#include "maskWord.hpp"
+#include "../../include/Text.hpp"
+#include "../../include/utfConvert.hpp"
+#include "../../include/charTypes.hpp"
+#include "../../include/maskWord.hpp"
 
 #include <iostream>
 #include <set>

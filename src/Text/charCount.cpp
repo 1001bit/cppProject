@@ -1,5 +1,5 @@
-#include "Text.hpp"
-#include "utfConvert.hpp"
+#include "../../include/Text.hpp"
+#include "../../include/utfConvert.hpp"
 
 #include <vector>
 #include <iostream>

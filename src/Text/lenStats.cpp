@@ -1,5 +1,5 @@
-#include "Text.hpp"
-#include "utfConvert.hpp"
+#include "../../include/Text.hpp"
+#include "../../include/utfConvert.hpp"
 
 #include <set>
 
@@ -11,15 +11,17 @@ void Text::initWordLenCount(){
 
 void Text::initSentenceLenCount(std::ifstream& inFile){
     std::set<char> punct{'!', '.', '?'};
-    
+
     int sentenceLen = 0;
     std::string word;
     while(inFile >> word){
         sentenceLen++;
-        if (punct.contains(word[word.size()-1])) {
+        if (!word.empty() && punct.contains(word[word.size()-1])) {
             this->sentenceLenCount[sentenceLen]++;
             sentenceLen = 0;
         }
     }
-    this->sentenceLenCount[sentenceLen]++;
+    if (sentenceLen > 0) {
+        this->sentenceLenCount[sentenceLen]++;
+    }
 }

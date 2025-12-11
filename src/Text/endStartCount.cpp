@@ -1,7 +1,7 @@
-#include "Text.hpp"
-#include "charTypes.hpp"
-#include "utfConvert.hpp"
-#include "maskWord.hpp"
+#include "../../include/Text.hpp"
+#include "../../include/charTypes.hpp"
+#include "../../include/utfConvert.hpp"
+#include "../../include/maskWord.hpp"
 
 #include <set>
 
@@ -15,8 +15,8 @@ void Text::initEndStartCount(std::ifstream& inFile){
     std::string word;
     while(inFile >> word){
         std::u32string masked = maskWord(word);
-        
-        if (prevWord == U""){
+
+        if (prevWord.empty() || masked.empty()){
             prevWord = masked;
             continue;
         }

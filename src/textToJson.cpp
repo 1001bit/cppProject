@@ -1,7 +1,7 @@
-#include "Text.hpp"
-#include "utfConvert.hpp"
+#include "../include/Text.hpp"
+#include "../include/utfConvert.hpp"
 
-#include "textToJson.hpp"
+#include "../include/textToJson.hpp"
 
 void to_json(nlohmann::json& j, const ConVowAltCount& cnt){
     j = std::map<std::string, int>{
@@ -31,7 +31,7 @@ void to_json(nlohmann::json& j, const VowsAndConsCnt& cnt){
 std::map<std::string, int> textCharCount(const Text& text){
     const std::map<char32_t, int>& cnt = text.getCharCount();
     std::map<std::string, int> res;
-    
+
     for(auto& it : cnt){
         const std::string c = conv.to_bytes(it.first);
         res[c] = it.second;
@@ -42,7 +42,7 @@ std::map<std::string, int> textCharCount(const Text& text){
 
 std::map<std::string, ConVowAltCount> textConVowAltCount(const Text& text){
     std::map<std::string, ConVowAltCount> res;
-    
+
     for (auto& it : text.getConVowAltCount()) {
         char32_t c = it.first;
         const ConVowAltCount& s = it.second;
@@ -50,7 +50,7 @@ std::map<std::string, ConVowAltCount> textConVowAltCount(const Text& text){
         res[conv.to_bytes(c)] = s;
     }
 
-    return res; 
+    return res;
 }
 
 std::map<std::string, int> textCombsCount(const Text& text){
@@ -64,7 +64,7 @@ std::map<std::string, int> textCombsCount(const Text& text){
 
 std::map<std::string, int> textWordsCount(const Text& text){
     std::map<std::string, int> res;
-    
+
     for (auto& it : text.getWordsCount()){
         res[conv.to_bytes(it.first)] = it.second;
     }

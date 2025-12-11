@@ -1,10 +1,10 @@
-#include "charTypes.hpp"
+#include "../../include/charTypes.hpp"
 
 // TODO: Make it json
 
 const std::map<std::string, std::u32string> charTypes {
     {
-        "all", 
+        "all",
         U"абвгдеёжзийклмнопрстуфхцчшщъыьэюя ,.!?:;\"()-+"
     },
     {

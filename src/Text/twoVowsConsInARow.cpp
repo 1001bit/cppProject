@@ -1,7 +1,7 @@
-#include "Text.hpp"
-#include "charTypes.hpp"
-#include "utfConvert.hpp"
-#include "maskWord.hpp"
+#include "../../include/Text.hpp"
+#include "../../include/charTypes.hpp"
+#include "../../include/utfConvert.hpp"
+#include "../../include/maskWord.hpp"
 
 #include <set>
 
@@ -15,8 +15,8 @@ void Text::initTwoVowsConsNeihgbors(std::ifstream& inFile){
     std::string word;
     while(inFile >> word){
         std::u32string masked = maskWord(word);
-        
-        if (prevWord == U""){
+
+        if (prevWord.size() < 2 || masked.size() < 2){
             prevWord = masked;
             continue;
         }
@@ -27,7 +27,7 @@ void Text::initTwoVowsConsNeihgbors(std::ifstream& inFile){
         vows.contains(prevWord[prevN-1]) &&
         vows.contains(prevWord[prevN-2]) &&
         cons.contains(masked[0]) &&
-        cons.contains(masked[1]); 
+        cons.contains(masked[1]);
 
         prevWord = masked;
     }

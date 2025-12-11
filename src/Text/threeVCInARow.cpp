@@ -1,5 +1,5 @@
-#include "Text.hpp"
-#include "charTypes.hpp"
+#include "../../include/Text.hpp"
+#include "../../include/charTypes.hpp"
 
 #include <iostream>
 #include <set>
@@ -20,7 +20,7 @@ void Text::initThreeVCInARow(){
 
         for (size_t i = 0; i < word.size(); i++){
             char32_t c = word[i];
-            
+
             if (vows.contains(c)){
                 vowStreak += 1;
             } else {

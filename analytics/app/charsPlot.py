@@ -27,7 +27,7 @@ def charsPlot(charCounts: list[dict[str | int, int]], colors):
 
         for key in charAxes:
             ax = charAxes[key]
-            plotter.plot(ax, charCounts, PlotType.BAR, labels=charTypes[key])
+            plotter.plot(ax, charCounts, PlotType.BAR, charTypes[key])
             ax.set_title(key)
 
     return charFig

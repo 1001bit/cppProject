@@ -4,11 +4,12 @@ import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 from app.charsPlot import *
 from app.lenPlots import *
+from app.prepsPlot import *
 
 def main() -> None:
     files = []
 
-    for fileName in os.listdir("output"):
+    for fileName in sorted(os.listdir("output")):
         path = "output/" + fileName
         with open(path) as f:
             d = json.load(f)
@@ -27,6 +28,9 @@ def main() -> None:
         colors
     )
     lensFig.savefig(plotsPath + "lens.png")
+
+    prepsFig = prepsPlot([f["wordsCount"] for f in files], colors)
+    prepsFig.savefig(plotsPath + "preps.png")
 
 if __name__ == "__main__":
     main()

@@ -5,7 +5,7 @@ import json
 
 assetsPath = "assets/"
 
-def charsPlot(charCounts: list[dict[str | int, int]], colors):
+def charsPlot(charCounts: list[dict[str | int, float]], colors):
     charAxes: dict[str, Axes] = {}
 
     n = 8

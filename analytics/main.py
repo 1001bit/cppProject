@@ -6,6 +6,7 @@ from app.charsPlot import *
 from app.lenPlots import *
 from app.prepsPlot import *
 from app.combinationPlot import *
+from app.vowConAlterPlot import *
 
 def main() -> None:
     files = []
@@ -35,6 +36,9 @@ def main() -> None:
 
     combinationsFig = combinationsPlot([f["combinationsCount"] for f in files], colors)
     combinationsFig.savefig(plotsPath + "combinations.png")
+
+    vowConAlterFig = vowConAlterPlot([f["conVowAltCount"] for f in files], colors)
+    vowConAlterFig.savefig(plotsPath + "vowConAlterFig")
 
 if __name__ == "__main__":
     main()

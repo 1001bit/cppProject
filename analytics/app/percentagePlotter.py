@@ -11,16 +11,21 @@ class PercentagePlotter():
     def __init__(self, colors):
         self.colors = colors
 
-    def plot(self, ax: Axes, data: list[dict[str | int, int]], type: PlotType, labels: list[str | int]):
+    def plot(self, ax: Axes, data: list[dict[str | int, float]], type: PlotType, labels: list[str | int], countPercents = True):
         values = [[0.0] * len(labels) for _ in range(len(data))]
 
-        for i, d in enumerate(data):
-            totalCnt = 0
-            for key in d:
-                totalCnt += d[key]
-            for key in d:
-                if totalCnt == 0 or key not in labels: continue
-                values[i][labels.index(key)] = d[key]/totalCnt*100
+        if countPercents:
+            for i, d in enumerate(data):
+                totalCnt = 0
+                for key in d:
+                    totalCnt += d[key]
+                for key in d:
+                    if totalCnt == 0 or key not in labels: continue
+                    values[i][labels.index(key)] = d[key]/totalCnt*100
+        else:
+            for i, d in enumerate(data):
+                for key in d:
+                    values[i][labels.index(key)] = d[key]
 
         ax.set_ylabel('%')
 

@@ -6,30 +6,30 @@ import json
 assetsPath = "assets/"
 
 def lensPlot(wordLenCount: list[list[tuple[int, int]]], sentenceLenCount: list[list[tuple[int, int]]], colors):
-    charAxes: dict[str, Axes] = {}
+    lensAxes: dict[str, Axes] = {}
 
     n = 2
     charFig, (
-        charAxes["word length"],
-        charAxes["sentence length"],
+        lensAxes["word length"],
+        lensAxes["sentence length"],
     ) = plt.subplots(n, 1, figsize=(30, 5*n))
 
     plotter = PercentagePlotter(colors)
 
-    for key in charAxes:
-        ax = charAxes[key]
-        data = wordLenCount if key == "word length" else sentenceLenCount
-        newData: list[dict[str | int, int]] = [{} for _ in range(len(data))]
+    for key in lensAxes:
+        ax = lensAxes[key]
+        count = wordLenCount if key == "word length" else sentenceLenCount
+        newCount: list[dict[str | int, float]] = [{} for _ in range(len(count))]
 
         mx = 0
-        for a in data:
+        for a in count:
             for b in a:
                 mx = max(mx, b[0])
 
-        for i, d in enumerate(data):
-            newData[i] = {a[0]: a[1] for a in d}
+        for i, d in enumerate(count):
+            newCount[i] = {a[0]: a[1] for a in d}
 
-        plotter.plot(ax, newData, PlotType.PLOT, list(range(mx)))
+        plotter.plot(ax, newCount, PlotType.PLOT, list(range(mx)))
         ax.set_title(key)
 
     return charFig

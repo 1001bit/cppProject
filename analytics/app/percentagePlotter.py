@@ -37,13 +37,15 @@ class PercentagePlotter():
         for i, v in enumerate(values):
             offset = -groupWidth/2 + i/m*groupWidth
             if type == PlotType.BAR:
-                ax.bar(x + offset, v, width, label=f'text {i+1}', color=self.colors[i%len(self.colors)])
+                bars = ax.bar(x + offset, v, width, label=f'text {i+1}', color=self.colors[i%len(self.colors)])
+                ax.bar_label(bars, padding=0, fontsize=6)
             else:
                 ax.plot(x, v, label=f'text {i+1}', color=self.colors[i%len(self.colors)])
 
         ax.set_ylabel('%')
         ax.set_xticks(x)
         ax.set_xticklabels(map(str, labels))
+
         handles, labels = ax.get_legend_handles_labels()
         seen = {}
         for h, l in zip(handles, labels):

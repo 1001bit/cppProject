@@ -5,9 +5,9 @@ import json
 
 assetsPath = "assets/"
 
-def combinationsPlot(combinationsCount: list[dict[str | int, int]], colors):
+def combinationsPlot(combinationsCount: list[dict[str | int, float]], colors):
     n = 1
-    charFig, (
+    fig, (
         ax
     ) = plt.subplots(n, 1, figsize=(50, 5*n))
 
@@ -19,4 +19,4 @@ def combinationsPlot(combinationsCount: list[dict[str | int, int]], colors):
         plotter.plot(ax, combinationsCount, PlotType.BAR, combinations)
         ax.set_title("комбинации букв")
 
-    return charFig
+    return fig

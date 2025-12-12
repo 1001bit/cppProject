@@ -9,7 +9,7 @@ def vowConAlterPlot(conVowAltCount: list[dict[str, dict[str, int]]], colors):
     alterAxes: dict[str, Axes] = {}
 
     n = 4
-    charFig, (
+    fig, (
         alterAxes["conAfter"],
         alterAxes["conBefore"],
         alterAxes["vowAfter"],
@@ -33,4 +33,4 @@ def vowConAlterPlot(conVowAltCount: list[dict[str, dict[str, int]]], colors):
             plotter.plot(ax, newCount, PlotType.BAR, charTypes["vows"] + charTypes["cons"], countPercents=False)
             ax.set_title(typeAndPos)
 
-    return charFig
+    return fig

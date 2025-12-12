@@ -5,7 +5,7 @@ import numpy as np
 
 def twoVowsConsPairsPlot(twoVowsConsNeighbors: list[int], colors):
     n = 1
-    charFig, (
+    fig, (
         ax
     ) = plt.subplots(n, 1, figsize=(10, 5*n))
 
@@ -15,4 +15,4 @@ def twoVowsConsPairsPlot(twoVowsConsNeighbors: list[int], colors):
     ax.set_title("пары слов, первое из которых заканчивается на 2 гласные, а второе начинается с 2 согласных")
     ax.set_ylabel('кол-во')
 
-    return charFig
+    return fig

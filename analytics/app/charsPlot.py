@@ -9,7 +9,7 @@ def charsPlot(charCounts: list[dict[str | int, float]], colors):
     charAxes: dict[str, Axes] = {}
 
     n = 8
-    charFig, (
+    fig, (
         charAxes["letters"],
         charAxes["vows"],
         charAxes["cons"],
@@ -30,4 +30,4 @@ def charsPlot(charCounts: list[dict[str | int, float]], colors):
             plotter.plot(ax, charCounts, PlotType.BAR, charTypes[key])
             ax.set_title(key)
 
-    return charFig
+    return fig

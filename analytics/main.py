@@ -10,6 +10,7 @@ from app.vowConAlterPlot import *
 from app.conVowEndStartPlot import *
 from app.threeInARowPlot import *
 from app.twoVowsConsPairsPlot import *
+from app.topWordsPlot import *
 
 def main() -> None:
     files = []
@@ -49,9 +50,11 @@ def main() -> None:
     threeInARowFig = threeVowsConsInARowPlot([f["threeVowsOrConsInARow"] for f in files], colors)
     threeInARowFig.savefig(plotsPath + "threeVowsOrConsInARow.png")
 
-    print([f["twoVowsConsNeighbors"] for f in files])
     twoVowsConsPairsFig = twoVowsConsPairsPlot([f["twoVowsConsNeighbors"] for f in files], colors)
     twoVowsConsPairsFig.savefig(plotsPath + "twoVowsConsPairs.png")
+
+    topWordsFig = topWordsPlot([f["wordsCount"] for f in files], colors)
+    topWordsFig.savefig(plotsPath + "topWords.png")
 
 if __name__ == "__main__":
     main()

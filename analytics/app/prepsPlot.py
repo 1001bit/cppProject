@@ -7,7 +7,7 @@ assetsPath = "assets/"
 
 def prepsPlot(wordsCount: list[dict[str | int, float]], colors):
     n = 1
-    charFig, (
+    fig, (
         ax
     ) = plt.subplots(n, 1, figsize=(300, 5*n))
 
@@ -19,4 +19,4 @@ def prepsPlot(wordsCount: list[dict[str | int, float]], colors):
         plotter.plot(ax, wordsCount, PlotType.BAR, preps)
         ax.set_title("предлоги и союзы")
 
-    return charFig
+    return fig

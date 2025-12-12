@@ -8,7 +8,7 @@ def lensPlot(wordLenCount: list[list[tuple[int, int]]], sentenceLenCount: list[l
     lensAxes: dict[str, Axes] = {}
 
     n = 2
-    charFig, (
+    fig, (
         lensAxes["word length"],
         lensAxes["sentence length"],
     ) = plt.subplots(n, 1, figsize=(30, 5*n))
@@ -31,4 +31,4 @@ def lensPlot(wordLenCount: list[list[tuple[int, int]]], sentenceLenCount: list[l
         plotter.plot(ax, newCount, PlotType.PLOT, list(range(mx)))
         ax.set_title(key)
 
-    return charFig
+    return fig

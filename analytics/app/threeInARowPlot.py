@@ -4,7 +4,7 @@ from app.percentagePlotter import PercentagePlotter, PlotType
 
 def threeVowsConsInARowPlot(threeInARow: list[dict[str | int, float]], colors):
     n = 1
-    charFig, (
+    fig, (
         ax
     ) = plt.subplots(n, 1, figsize=(10, 5*n))
 
@@ -13,4 +13,4 @@ def threeVowsConsInARowPlot(threeInARow: list[dict[str | int, float]], colors):
     plotter.plot(ax, threeInARow, PlotType.BAR, ["cons", "vows"])
     ax.set_title("три гласных/согласных подряд")
 
-    return charFig
+    return fig

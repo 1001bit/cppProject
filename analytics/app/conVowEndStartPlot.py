@@ -4,7 +4,7 @@ from app.percentagePlotter import PercentagePlotter, PlotType
 
 def conVowEndStartPlot(conVowEndStartCount: list[dict[str | int, float]], colors):
     n = 1
-    charFig, (
+    fig, (
         ax
     ) = plt.subplots(n, 1, figsize=(30, 5*n))
 
@@ -13,4 +13,4 @@ def conVowEndStartPlot(conVowEndStartCount: list[dict[str | int, float]], colors
     plotter.plot(ax, conVowEndStartCount, PlotType.BAR, ["conCon", "conVow", "vowCon", "vowVow"])
     ax.set_title("пары слов, начинающиеся/заканчивающиеся на гласную-согласную")
 
-    return charFig
+    return fig

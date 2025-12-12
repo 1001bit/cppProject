@@ -28,7 +28,7 @@ def lensPlot(wordLenCount: list[list[tuple[int, int]]], sentenceLenCount: list[l
         for i, d in enumerate(count):
             newCount[i] = {a[0]: a[1] for a in d}
 
-        plotter.plot(ax, newCount, PlotType.PLOT, list(range(mx)))
+        plotter.plot(ax, newCount, PlotType.PLOT, list(range(1, mx+1)))
         ax.set_title(key)
 
     return fig

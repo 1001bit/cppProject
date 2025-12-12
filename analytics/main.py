@@ -22,8 +22,7 @@ def main() -> None:
             files.append(d)
 
     colors = ['tab:red', 'tab:grey', 'tab:green', 'tab:pink']
-    plotsPath = "analytics/plots/"  
-    plt.tight_layout()
+    plotsPath = "analytics/plots/"
 
     charFig = charsPlot([f["charCnt"] for f in files], colors)
     charFig.savefig(plotsPath + "chars.png")

@@ -12,6 +12,11 @@
 * Для windows: ```mingw32-make```
 * Для Linux: ```make ```
 
+### Code::Blocks
+* Открой `cppProject.cbp` и выбери цель `Debug` или `Release`.
+* Все исходники уже подключены; флаги совпадают с `Makefile` (`-std=c++20 -Wall -Wextra` + линковка `-lstdc++fs` для `std::filesystem`).
+* Рабочая директория задана в корень проекта, поэтому `input/`, `assets/` и `output/` ищутся корректно; бинарники собираются в `bin/main_debug` и `bin/main`.
+
 ### Запуск С++
 * ```./bin/main```
 

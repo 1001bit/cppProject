@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="cppProject" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Headers/;Sources/;Sources/Text/;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/main_debug" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/Debug/" />
+				<Option working_dir="$(PROJECT_DIR)" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ggdb" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/main" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/Release/" />
+				<Option working_dir="$(PROJECT_DIR)" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++20" />
+			<Add option="-Wall" />
+			<Add option="-Wextra" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add option="-lstdc++fs" />
+		</Linker>
+		<Unit filename="include/Assets.hpp">
+			<Option virtualFolder="Headers/" />
+		</Unit>
+		<Unit filename="include/Text.hpp">
+			<Option virtualFolder="Headers/" />
+		</Unit>
+		<Unit filename="include/json.hpp">
+			<Option virtualFolder="Headers/" />
+		</Unit>
+		<Unit filename="include/maskWord.hpp">
+			<Option virtualFolder="Headers/" />
+		</Unit>
+		<Unit filename="include/textToJson.hpp">
+			<Option virtualFolder="Headers/" />
+		</Unit>
+		<Unit filename="include/utfConvert.hpp">
+			<Option virtualFolder="Headers/" />
+		</Unit>
+		<Unit filename="src/Assets.cpp">
+			<Option virtualFolder="Sources/" />
+		</Unit>
+		<Unit filename="src/main.cpp">
+			<Option virtualFolder="Sources/" />
+		</Unit>
+		<Unit filename="src/maskWord.cpp">
+			<Option virtualFolder="Sources/" />
+		</Unit>
+		<Unit filename="src/textToJson.cpp">
+			<Option virtualFolder="Sources/" />
+		</Unit>
+		<Unit filename="src/utfConvert.cpp">
+			<Option virtualFolder="Sources/" />
+		</Unit>
+		<Unit filename="src/Text/Text.cpp">
+			<Option virtualFolder="Sources/Text/" />
+		</Unit>
+		<Unit filename="src/Text/charCount.cpp">
+			<Option virtualFolder="Sources/Text/" />
+		</Unit>
+		<Unit filename="src/Text/combsCount.cpp">
+			<Option virtualFolder="Sources/Text/" />
+		</Unit>
+		<Unit filename="src/Text/conVowAltCount.cpp">
+			<Option virtualFolder="Sources/Text/" />
+		</Unit>
+		<Unit filename="src/Text/countWords.cpp">
+			<Option virtualFolder="Sources/Text/" />
+		</Unit>
+		<Unit filename="src/Text/endStartCount.cpp">
+			<Option virtualFolder="Sources/Text/" />
+		</Unit>
+		<Unit filename="src/Text/lenStats.cpp">
+			<Option virtualFolder="Sources/Text/" />
+		</Unit>
+		<Unit filename="src/Text/threeVCInARow.cpp">
+			<Option virtualFolder="Sources/Text/" />
+		</Unit>
+		<Unit filename="src/Text/twoVowsConsInARow.cpp">
+			<Option virtualFolder="Sources/Text/" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

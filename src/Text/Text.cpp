@@ -1,14 +1,15 @@
 #include "Text.hpp"
 #include "utfConvert.hpp"
 
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <string>
 
-Text::Text(std::string txtPath) {
+Text::Text(const std::filesystem::path& txtPath) {
     std::ifstream inFile(txtPath);
     if (!inFile.is_open()) {
-        throw std::runtime_error("Could not open file: " + txtPath);
+        throw std::runtime_error("Could not open file: " + txtPath.string());
     }
 
     Assets assets("assets/charTypes.json", "assets/combinations.json");

@@ -3,6 +3,7 @@
 #include "Assets.hpp"
 
 #include <fstream>
+#include <filesystem>
 #include <map>
 #include <string>
 #include <vector>
@@ -66,7 +67,7 @@ private:
     void initTwoVowsConsNeihgbors(std::ifstream& inFile, Assets& assets);
 
 public:
-    Text(std::string txtPath);
+    Text(const std::filesystem::path& txtPath);
 
     // 1
     const std::map<char32_t, int>& getCharCount() const { return this->charCount; }

@@ -11,7 +11,11 @@ namespace fs = std::filesystem;
 
 int main(){
     std::setlocale(LC_ALL, "");
-    std::locale::global(std::locale(""));
+    try{
+        std::locale::global(std::locale(""));
+    } catch (const std::runtime_error& e){
+        std::cout << "error getting locale: " << e.what() << '\n';
+    }
 
     for(const auto& entry : fs::directory_iterator("input")){
         Text text(entry.path().string());

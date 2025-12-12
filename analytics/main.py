@@ -9,6 +9,7 @@ from app.combinationPlot import *
 from app.vowConAlterPlot import *
 from app.conVowEndStartPlot import *
 from app.threeInARowPlot import *
+from app.twoVowsConsPairsPlot import *
 
 def main() -> None:
     files = []
@@ -19,7 +20,7 @@ def main() -> None:
             d = json.load(f)
             files.append(d)
 
-    colors = ['tab:red', 'tab:green', 'tab:grey', 'tab:pink']
+    colors = ['tab:red', 'tab:grey', 'tab:green', 'tab:pink']
     plotsPath = "analytics/plots/"  
     plt.tight_layout()
 
@@ -47,6 +48,10 @@ def main() -> None:
 
     threeInARowFig = threeVowsConsInARowPlot([f["threeVowsOrConsInARow"] for f in files], colors)
     threeInARowFig.savefig(plotsPath + "threeVowsOrConsInARow.png")
+
+    print([f["twoVowsConsNeighbors"] for f in files])
+    twoVowsConsPairsFig = twoVowsConsPairsPlot([f["twoVowsConsNeighbors"] for f in files], colors)
+    twoVowsConsPairsFig.savefig(plotsPath + "twoVowsConsPairs.png")
 
 if __name__ == "__main__":
     main()

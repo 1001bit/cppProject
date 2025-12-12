@@ -27,7 +27,6 @@ class PercentagePlotter():
                 for key in d:
                     values[i][labels.index(key)] = d[key]
 
-        ax.set_ylabel('%')
 
         n = len(labels)
         m = len(values)
@@ -42,6 +41,7 @@ class PercentagePlotter():
             else:
                 ax.plot(x, v, label=f'text {i+1}', color=self.colors[i%len(self.colors)])
 
+        ax.set_ylabel('%')
         ax.set_xticks(x)
         ax.set_xticklabels(map(str, labels))
         handles, labels = ax.get_legend_handles_labels()

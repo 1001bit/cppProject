@@ -8,6 +8,7 @@ from app.prepsPlot import *
 from app.combinationPlot import *
 from app.vowConAlterPlot import *
 from app.conVowEndStartPlot import *
+from app.threeInARowPlot import *
 
 def main() -> None:
     files = []
@@ -39,10 +40,13 @@ def main() -> None:
     combinationsFig.savefig(plotsPath + "combinations.png")
 
     vowConAlterFig = vowConAlterPlot([f["conVowAltCount"] for f in files], colors)
-    vowConAlterFig.savefig(plotsPath + "vowConAlterFig")
+    vowConAlterFig.savefig(plotsPath + "vowConAlterFig.png")
 
     conVowEndStartFig = conVowEndStartPlot([f["conVowEndStartCount"] for f in files], colors)
-    conVowEndStartFig.savefig(plotsPath + "conVowEndStartFig")
+    conVowEndStartFig.savefig(plotsPath + "conVowEndStartFig.png")
+
+    threeInARowFig = threeVowsConsInARowPlot([f["threeVowsOrConsInARow"] for f in files], colors)
+    threeInARowFig.savefig(plotsPath + "threeVowsOrConsInARow.png")
 
 if __name__ == "__main__":
     main()

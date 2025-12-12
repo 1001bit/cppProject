@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 from app.percentagePlotter import PercentagePlotter, PlotType
-import json
 
 def conVowEndStartPlot(conVowEndStartCount: list[dict[str | int, float]], colors):
     n = 1
@@ -12,6 +11,6 @@ def conVowEndStartPlot(conVowEndStartCount: list[dict[str | int, float]], colors
     plotter = PercentagePlotter(colors)
 
     plotter.plot(ax, conVowEndStartCount, PlotType.BAR, ["conCon", "conVow", "vowCon", "vowVow"])
-    ax.set_title("предлоги и союзы")
+    ax.set_title("пары слов, начинающиеся/заканчивающиеся на гласную-согласную")
 
     return charFig

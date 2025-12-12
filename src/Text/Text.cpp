@@ -18,12 +18,12 @@ Text::Text(std::string txtPath) {
     inFile.clear(); inFile.seekg(0);
 
     // 1
-    this->initCharCount(inFile);    
+    this->initCharCount(inFile, assets);    
     inFile.clear(); inFile.seekg(0);
 
     // 2
     this->initWordLenCount();
-    this->initSentenceLenCount(inFile);
+    this->initSentenceLenCount(inFile, assets);
     inFile.clear(); inFile.seekg(0);
 
     // 4

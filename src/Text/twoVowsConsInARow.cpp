@@ -2,6 +2,7 @@
 #include "utfConvert.hpp"
 #include "maskWord.hpp"
 
+#include <algorithm>
 #include <set>
 
 void Text::initTwoVowsConsNeihgbors(std::ifstream& inFile, Assets& assets){
@@ -9,6 +10,7 @@ void Text::initTwoVowsConsNeihgbors(std::ifstream& inFile, Assets& assets){
 
     const std::set<char32_t> vows(charTypes.at("vows").begin(), charTypes.at("vows").end());
     const std::set<char32_t> cons(charTypes.at("cons").begin(), charTypes.at("cons").end());
+    const std::set<char32_t> letters(charTypes.at("letters").begin(), charTypes.at("letters").end());
 
     this->twoVowsConsNeighbors = 0;
 
@@ -16,6 +18,13 @@ void Text::initTwoVowsConsNeihgbors(std::ifstream& inFile, Assets& assets){
     std::string word;
     while(inFile >> word){
         std::u32string masked = maskWord(word, charTypes.at("letters") + U'-');
+
+        const bool hasLetters = std::any_of(masked.begin(), masked.end(), [&](char32_t c){
+            return letters.contains(c);
+        });
+        if (!hasLetters){
+            continue;
+        }
         
         if (prevWord.size() < 2 || masked.size() < 2){
             prevWord = masked;

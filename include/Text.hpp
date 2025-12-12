@@ -35,13 +35,13 @@ private:
 
     // 1
     std::map<char32_t, int> charCount;
-    void initCharCount(std::ifstream& inFile);
+    void initCharCount(std::ifstream& inFile, Assets& assets);
 
     // 2
     std::map<int, int> wordLenCount;
     std::map<int, int> sentenceLenCount;
     void initWordLenCount();
-    void initSentenceLenCount(std::ifstream& inFile);
+    void initSentenceLenCount(std::ifstream& inFile, Assets& assets);
 
     // 3 skipped
 

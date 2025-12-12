@@ -5,7 +5,7 @@ import json
 
 assetsPath = "assets/"
 
-def prepsPlot(wordsCount: list[dict[str | int, int]], colors):
+def prepsPlot(wordsCount: list[dict[str | int, float]], colors):
     n = 1
     charFig, (
         ax

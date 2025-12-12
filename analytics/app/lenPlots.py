@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 from app.percentagePlotter import PercentagePlotter, PlotType
-import json
 
 assetsPath = "assets/"
 

@@ -21,13 +21,13 @@ void Text::initConVowAltCount(Assets& assets){
         for (size_t i = 0; i < word.size(); i++){
             char32_t c = word[i];
             
-            if (!conVowAltCount.contains(c)){
+            if (!conVowAltCount.count(c)){
                 continue;
             }
             ConVowAltCount& cnt = conVowAltCount[c];
 
-            cnt.vowBefore += wordCount * (i > 0 && vows.contains(word[i-1]));
-            cnt.conBefore += wordCount * (i > 0 && cons.contains(word[i-1]));
+            cnt.vowBefore += wordCount * (i > 0 && vows.count(word[i-1]));
+            cnt.conBefore += wordCount * (i > 0 && cons.count(word[i-1]));
             cnt.vowAfter += wordCount * (i < word.size()-1 && vows.count(word[i+1]));
             cnt.conAfter += wordCount * (i < word.size()-1 && cons.count(word[i+1]));
         }

@@ -22,13 +22,13 @@ void Text::initThreeVCInARow(Assets& assets){
         for (size_t i = 0; i < word.size(); i++){
             char32_t c = word[i];
             
-            if (vows.contains(c)){
+            if (vows.count(c)){
                 vowStreak += 1;
             } else {
                 vowStreak = 0;
             }
 
-            if (cons.contains(c)){
+            if (cons.count(c)){
                 conStreak += 1;
             } else {
                 conStreak = 0;

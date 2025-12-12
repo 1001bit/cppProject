@@ -14,7 +14,7 @@ void Text::countWords(std::ifstream& inFile, Assets& assets){
     while(inFile >> word){
         std::u32string masked = maskWord(word, charTypes.at("letters") + U'-');
         const bool hasLetters = std::any_of(masked.begin(), masked.end(), [&](char32_t c){
-            return letters.contains(c);
+            return letters.count(c);
         });
 
         if (!hasLetters){

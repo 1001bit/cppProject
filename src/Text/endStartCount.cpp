@@ -20,7 +20,7 @@ void Text::initEndStartCount(std::ifstream& inFile, Assets& assets){
         std::u32string masked = maskWord(word, charTypes.at("letters") + U'-');
 
         const bool hasLetters = std::any_of(masked.begin(), masked.end(), [&](char32_t c){
-            return letters.contains(c);
+            return letters.count(c);
         });
         if (!hasLetters){
             continue;
@@ -34,10 +34,10 @@ void Text::initEndStartCount(std::ifstream& inFile, Assets& assets){
         char32_t prevLast = prevWord[prevWord.size()-1];
         char32_t currFirst = masked[0];
 
-        this->endStartCount.cc += cons.contains(prevLast) && cons.contains(currFirst);
-        this->endStartCount.cv += cons.contains(prevLast) && vows.contains(currFirst);
-        this->endStartCount.vc += vows.contains(prevLast) && cons.contains(currFirst);
-        this->endStartCount.vv += vows.contains(prevLast) && vows.contains(currFirst);
+        this->endStartCount.cc += cons.count(prevLast) && cons.count(currFirst);
+        this->endStartCount.cv += cons.count(prevLast) && vows.count(currFirst);
+        this->endStartCount.vc += vows.count(prevLast) && cons.count(currFirst);
+        this->endStartCount.vv += vows.count(prevLast) && vows.count(currFirst);
 
         prevWord = masked;
     }

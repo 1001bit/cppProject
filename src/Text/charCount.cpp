@@ -15,7 +15,7 @@ void Text::initCharCount(std::ifstream& inFile, Assets& assets){
         std::u32string converted = conv.from_bytes(line);
         for(char32_t c : converted){
             c = std::towlower(c);
-            if (!allowedSet.contains(c)){
+            if (!allowedSet.count(c)){
                 continue;
             }
             this->charCount[c]++;

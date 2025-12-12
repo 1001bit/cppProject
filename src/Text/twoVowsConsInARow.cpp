@@ -20,7 +20,7 @@ void Text::initTwoVowsConsNeihgbors(std::ifstream& inFile, Assets& assets){
         std::u32string masked = maskWord(word, charTypes.at("letters") + U'-');
 
         const bool hasLetters = std::any_of(masked.begin(), masked.end(), [&](char32_t c){
-            return letters.contains(c);
+            return letters.count(c);
         });
         if (!hasLetters){
             continue;
@@ -34,10 +34,10 @@ void Text::initTwoVowsConsNeihgbors(std::ifstream& inFile, Assets& assets){
         int prevN = prevWord.size();
 
         this->twoVowsConsNeighbors +=
-        vows.contains(prevWord[prevN-1]) &&
-        vows.contains(prevWord[prevN-2]) &&
-        cons.contains(masked[0]) &&
-        cons.contains(masked[1]); 
+        vows.count(prevWord[prevN-1]) &&
+        vows.count(prevWord[prevN-2]) &&
+        cons.count(masked[0]) &&
+        cons.count(masked[1]); 
 
         prevWord = masked;
     }

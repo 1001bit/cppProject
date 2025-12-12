@@ -21,14 +21,14 @@ void Text::initSentenceLenCount(std::ifstream& inFile, Assets& assets){
     while(inFile >> word){
         std::u32string masked = maskWord(word, charTypes.at("letters") + U'-');
         const bool hasLetters = std::any_of(masked.begin(), masked.end(), [&](char32_t c){
-            return letters.contains(c);
+            return letters.count(c);
         });
 
         if (hasLetters){
             sentenceLen++;
         }
 
-        if (!word.empty() && punct.contains(word[word.size()-1])) {
+        if (!word.empty() && punct.count(word[word.size()-1])) {
             if (sentenceLen > 0){
                 this->sentenceLenCount[sentenceLen]++;
             }
